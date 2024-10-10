@@ -1,4 +1,4 @@
-import "./App.css";
+import "./styling/app.css";
 
 import Welcome from "./Welcome";
 import Portfolio from "./Portfolio";

@@ -1,4 +1,4 @@
-import "./welcome.css";
+import "./styling/welcome.css";
 import "animate.css";
 
 import Logo from "./assets/logo-rectangle.png";
