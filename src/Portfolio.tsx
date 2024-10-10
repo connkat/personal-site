@@ -45,12 +45,28 @@ function Portfolio() {
 			</div>
 			<div className="carousel">
 				<h1>Fun projects</h1>
+				<h3>
+					I could go on about my professional experience with: <br />
+					<a href="http://neofinancial.com" target="_blank" rel="noreferrer">
+						Neo Financial
+					</a>
+					,{" "}
+					<a href="http://lighthouselabs.ca" target="_blank" rel="noreferrer">
+						Lighthouse Labs
+					</a>
+					,{" "}
+					<a href="http://checkfront.com" target="_blank" rel="noreferrer">
+						Checkfront
+					</a>
+					, or my Freelance work, <br />
+					but instead here are some of my fun personal projects:
+				</h3>
 				<Carousel
 					swipeable={false}
 					draggable={false}
 					showDots={true}
 					responsive={responsive}
-					ssr={true} // means to render carousel on server-side.
+					ssr={true}
 					infinite={true}
 					// autoPlay={true}
 					// autoPlaySpeed={1000}
