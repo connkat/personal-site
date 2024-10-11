@@ -3,11 +3,17 @@ import "react-multi-carousel/lib/styles.css";
 
 import Carousel from "react-multi-carousel";
 
-import coffee from "./assets/ex-coffee.png";
-import fwf from "./assets/ex-fwf.png";
-import dub from "./assets/ex-dub.png";
-import calc from "./assets/ex-calc.png";
-import pixels from "./assets/ex-pixels.png";
+import {
+	calc,
+	pixels,
+	coffee,
+	fwf,
+	dub,
+	linkedIn,
+	resume,
+	github,
+	medium,
+} from "./assets/index";
 
 const Fade = require("react-reveal/Fade");
 
@@ -60,10 +66,40 @@ function Portfolio() {
 								</li>
 							</ul>
 							If that doesn't give you a better idea of the type of person I am,
-							I don't know what will.
+							then feel free to do a deep dive in any of these places:
 						</h3>
 					</div>
 				</Fade>
+				<div className="icon-links">
+					<a
+						href="https://github.com/connkat/Resume/blob/master/KConnolly.pdf"
+						target="_blank"
+						rel="noreferrer"
+					>
+						<img src={resume} alt="resume" className="icon-tiny" />
+					</a>
+					<a
+						href="https://linkedin.com/in/connkat"
+						target="_blank"
+						rel="noreferrer"
+					>
+						<img src={linkedIn} alt="linkedIn" className="icon-tiny-linkedin" />
+					</a>
+					<a
+						href="https://www.github.com/connkat"
+						target="_blank"
+						rel="noreferrer"
+					>
+						<img src={github} alt="github" className="icon-tiny" />
+					</a>
+					<a
+						href="https://connkat.medium.com/"
+						target="_blank"
+						rel="noreferrer"
+					>
+						<img src={medium} alt="Medium" className="icon-tiny" />
+					</a>
+				</div>
 			</div>
 			<div className="fun-work">
 				<Fade duration={5000}>
