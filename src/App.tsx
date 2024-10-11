@@ -1,13 +1,14 @@
 import "./styling/app.css";
+import React from "react";
 
-import Welcome from "./Welcome";
-import Portfolio from "./Portfolio";
+import { Welcome, Portfolio, Contact } from "./components";
 
 function App() {
 	return (
 		<div className="App">
 			<Welcome />
 			<Portfolio />
+			<Contact />
 		</div>
 	);
 }

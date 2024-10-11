@@ -1,7 +1,7 @@
-import "./styling/welcome.css";
 import "animate.css";
+import "../styling/welcome.css";
 
-import Logo from "./assets/logo-rectangle.png";
+import Logo from "../assets/logo-rectangle.png";
 
 function Welcome() {
 	return (

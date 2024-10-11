@@ -1,5 +1,10 @@
 .Welcome {
 	height: 100vh;
+
+	h1 {
+		text-align: right;
+		padding-right: 10%;
+	}
 }
 
 .Welcome:after {
@@ -19,11 +24,7 @@
 	z-index: 1;
 }
 
-h1 {
-	text-align: right;
-	padding-right: 10%;
-	font-weight: 100;
-}
+
 
 .animate__animated.animate__fadeInUp {
 	--animate-duration: 5s;

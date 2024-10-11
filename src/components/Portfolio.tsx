@@ -1,7 +1,7 @@
-import "./styling/portfolio.css";
-import "react-multi-carousel/lib/styles.css";
-
 import Carousel from "react-multi-carousel";
+
+import "react-multi-carousel/lib/styles.css";
+import "../styling/portfolio.css";
 
 import {
 	calc,
@@ -13,7 +13,7 @@ import {
 	resume,
 	github,
 	medium,
-} from "./assets/index";
+} from "../assets/index";
 
 const Fade = require("react-reveal/Fade");
 
@@ -35,7 +35,7 @@ function Portfolio() {
 	return (
 		<div className="Portfolio">
 			<div className="textBox">
-				<Fade duration={5000} delay={500}>
+				<Fade duration={5000}>
 					<h1 className="new-text">About Kat</h1>
 					<div className="new-text">
 						<h2>What kind of person is Kat?</h2>
@@ -70,36 +70,42 @@ function Portfolio() {
 						</h3>
 					</div>
 				</Fade>
-				<div className="icon-links">
-					<a
-						href="https://github.com/connkat/Resume/blob/master/KConnolly.pdf"
-						target="_blank"
-						rel="noreferrer"
-					>
-						<img src={resume} alt="resume" className="icon-tiny" />
-					</a>
-					<a
-						href="https://linkedin.com/in/connkat"
-						target="_blank"
-						rel="noreferrer"
-					>
-						<img src={linkedIn} alt="linkedIn" className="icon-tiny-linkedin" />
-					</a>
-					<a
-						href="https://www.github.com/connkat"
-						target="_blank"
-						rel="noreferrer"
-					>
-						<img src={github} alt="github" className="icon-tiny" />
-					</a>
-					<a
-						href="https://connkat.medium.com/"
-						target="_blank"
-						rel="noreferrer"
-					>
-						<img src={medium} alt="Medium" className="icon-tiny" />
-					</a>
-				</div>
+				<Fade duration={5000}>
+					<div className="icon-links">
+						<a
+							href="https://github.com/connkat/Resume/blob/master/KConnolly.pdf"
+							target="_blank"
+							rel="noreferrer"
+						>
+							<img src={resume} alt="resume" className="icon-tiny" />
+						</a>
+						<a
+							href="https://linkedin.com/in/connkat"
+							target="_blank"
+							rel="noreferrer"
+						>
+							<img
+								src={linkedIn}
+								alt="linkedIn"
+								className="icon-tiny-linkedin"
+							/>
+						</a>
+						<a
+							href="https://www.github.com/connkat"
+							target="_blank"
+							rel="noreferrer"
+						>
+							<img src={github} alt="github" className="icon-tiny" />
+						</a>
+						<a
+							href="https://connkat.medium.com/"
+							target="_blank"
+							rel="noreferrer"
+						>
+							<img src={medium} alt="Medium" className="icon-tiny" />
+						</a>
+					</div>
+				</Fade>
 			</div>
 			<div className="fun-work">
 				<Fade duration={5000}>
