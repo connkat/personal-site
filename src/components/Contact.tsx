@@ -45,54 +45,56 @@ function Contact() {
 					}, 5000);
 				}
 			);
-
-		// Clears the form after sending the email
-		// e.target.reset();
 		setStateMessage("");
 	};
 	return (
 		<div className="Contact">
 			<h1>Get in touch</h1>
-
 			<form id="form" onSubmit={sendEmail}>
-				<label>Name</label>
-				<input
-					type="text"
-					name="user_name"
-					value={entryFields.name}
-					onChange={(e) =>
-						setEntryFields({
-							name: e.target.value,
-							email: entryFields.email,
-							message: entryFields.message,
-						})
-					}
-				/>
-				<label>Email</label>
-				<input
-					type="email"
-					name="user_email"
-					value={entryFields.email}
-					onChange={(e) =>
-						setEntryFields({
-							name: entryFields.name,
-							email: e.target.value,
-							message: entryFields.message,
-						})
-					}
-				/>
-				<label>Message</label>
-				<textarea
-					name="message"
-					value={entryFields.message}
-					onChange={(e) =>
-						setEntryFields({
-							name: entryFields.name,
-							email: entryFields.email,
-							message: e.target.value,
-						})
-					}
-				/>
+				<div className="field_name">
+					<label>Name</label>
+					<input
+						type="text"
+						name="user_name"
+						value={entryFields.name}
+						onChange={(e) =>
+							setEntryFields({
+								name: e.target.value,
+								email: entryFields.email,
+								message: entryFields.message,
+							})
+						}
+					/>
+				</div>
+				<div className="field_email">
+					<label>Email</label>
+					<input
+						type="email"
+						name="user_email"
+						value={entryFields.email}
+						onChange={(e) =>
+							setEntryFields({
+								name: entryFields.name,
+								email: e.target.value,
+								message: entryFields.message,
+							})
+						}
+					/>
+				</div>
+				<div className="field_message">
+					<label>Message</label>
+					<textarea
+						name="message"
+						value={entryFields.message}
+						onChange={(e) =>
+							setEntryFields({
+								name: entryFields.name,
+								email: entryFields.email,
+								message: e.target.value,
+							})
+						}
+					/>
+				</div>
 				<input type="submit" value="Send" disabled={isSubmitting} />
 				{stateMessage && <p>{stateMessage}</p>}
 			</form>
