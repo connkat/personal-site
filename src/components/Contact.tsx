@@ -17,6 +17,12 @@ function Contact() {
 		e.persist();
 		e.preventDefault();
 		setIsSubmitting(true);
+
+		console.log("!!!", entryFields.email);
+
+		if (entryFields.email === "" || !entryFields.name || !entryFields.message) {
+			setStateMessage("Please complete all fields before submitting form");
+		}
 		emailjs
 			.sendForm(
 				process.env.REACT_APP_SERVICE_ID,
