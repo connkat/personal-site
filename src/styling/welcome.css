@@ -24,6 +24,12 @@
 	z-index: 1;
 }
 
+.logo_mobile {
+	width: 100%;
+	opacity: 1;
+	z-index: 1;
+	padding-bottom: 20vh;
+}
 
 
 .animate__animated.animate__fadeInUp {

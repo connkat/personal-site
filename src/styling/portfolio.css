@@ -1,14 +1,17 @@
 .Portfolio {
 	background-color: #b5c9e4;
+
+	h3 {
+		font-weight: 100;
+	}
+}
+
+.wrapper_desktop {
 	height: 60vh;
 	display: flex;
 	flex-direction: row;
 	justify-content: space-between;
 	padding: 5%;
-
-	h3 {
-		font-weight: 100;
-	}
 }
 
 .textBox {
@@ -18,16 +21,19 @@
 	}
 }
 
-.fun-work{
+.fun-work {
 	width: 40%;
 	text-align: right;
 }
 
-.carousel {
+.carousel:hover {
+	cursor: pointer;
+}
+.react-reveal.carousel {
+	margin-left: 50%;
 	img {
 		max-width: 80%;
 		max-height: 75%;
-		border: 3px solid black;
 	}
 }
 
