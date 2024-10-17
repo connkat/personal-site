@@ -3,6 +3,7 @@
 	background-color: #81858f;
 	display: flex;
 	flex-direction: column;
+	align-items: center;
 
 	h1 {
 		text-align: center;
@@ -17,21 +18,51 @@
 
 #form {
 	display: flex;
-	flex-direction: column;
-	padding: 5vh;
+	flex-direction: row;
 }
 
+.inputs {
+	display: flex;
+	flex-direction: column;
+	margin-right: 5vh;
+}
+
+input {
+	border-radius: 5px;
+	margin-bottom: 1vh;
+	width: 40vh;
+	height: 4vh;
+	border: black solid 1px;
+}
 textarea {
-	width: 24%;
+	margin-bottom: 1vh;
 	height: 20vh;
+	border-radius: 5px;
+	border: black solid 1px;
+	width: 40vh;
 }
 
 .submit_button {
-	width: 25%;
+	width: 41vh;
 }
 
 @media only screen and (max-width: 800px) {
+	.Contact {
+		height: 90vh;
+	}
 	textarea {
 		width: 100%;
+	}
+
+	.inputs {
+		margin-right: 0;
+	}
+
+	#form {
+		flex-direction: column;
+	}
+
+	.submit_button {
+		width: 102%;
 	}
 }
