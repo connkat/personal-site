@@ -6,7 +6,7 @@ import { useMediaQuery } from "react-responsive";
 import Logo from "../assets/logo-rectangle.png";
 
 function Welcome() {
-	const isTabletOrMobile = useMediaQuery({ query: "(max-width: 1024px)" });
+	const isTabletOrMobile = useMediaQuery({ query: "(max-width: 800px)" });
 
 	return (
 		<div className="Welcome">
