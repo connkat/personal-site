@@ -22,10 +22,16 @@
 }
 
 textarea {
-	width: 50vh;
-	height: 100px;
+	width: 24%;
+	height: 20vh;
 }
 
 .submit_button {
-	width: 51vh;
+	width: 25%;
+}
+
+@media only screen and (max-width: 800px) {
+	textarea {
+		width: 100%;
+	}
 }
