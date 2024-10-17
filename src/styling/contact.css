@@ -1,5 +1,5 @@
 .Contact {
-	height: 50vh;
+	height: 60vh;
 	background-color: #81858f;
 	display: flex;
 	flex-direction: column;
@@ -9,10 +9,23 @@
 		margin-top: 0;
 		padding-top: 2%;
 	}
+
+	p {
+		padding: 0 5vh;
+	}
 }
 
 #form {
-	justify-content: space-between;
 	display: flex;
 	flex-direction: column;
+	padding: 5vh;
+}
+
+textarea {
+	width: 50vh;
+	height: 100px;
+}
+
+.submit_button {
+	width: 51vh;
 }

@@ -1,9 +1,8 @@
 import { FormEvent } from "react";
-
-import "../styling/contact.css";
-
 import { useState } from "react";
 import emailjs from "@emailjs/browser";
+
+import "../styling/contact.css";
 
 function Contact() {
 	const [isSubmitting, setIsSubmitting] = useState(false);
@@ -17,8 +16,6 @@ function Contact() {
 		e.persist();
 		e.preventDefault();
 		setIsSubmitting(true);
-
-		console.log("!!!", entryFields.email);
 
 		if (entryFields.email === "" || !entryFields.name || !entryFields.message) {
 			setStateMessage("Please complete all fields before submitting form");
@@ -56,12 +53,16 @@ function Contact() {
 	return (
 		<div className="Contact">
 			<h1>Get in touch</h1>
+			<p>
+				I can't come to the phone right now, but leave a name and detailed
+				message and I'll get back to you as soon as possible!
+			</p>
 			<form id="form" onSubmit={sendEmail}>
-				<div className="field_name">
-					<label>Name</label>
+				<div className="field">
 					<input
 						type="text"
 						name="user_name"
+						placeholder="Name"
 						value={entryFields.name}
 						onChange={(e) =>
 							setEntryFields({
@@ -72,10 +73,10 @@ function Contact() {
 						}
 					/>
 				</div>
-				<div className="field_email">
-					<label>Email</label>
+				<div className="field">
 					<input
 						type="email"
+						placeholder="Email"
 						name="user_email"
 						value={entryFields.email}
 						onChange={(e) =>
@@ -87,10 +88,10 @@ function Contact() {
 						}
 					/>
 				</div>
-				<div className="field_message">
-					<label>Message</label>
+				<div className="field__message">
 					<textarea
 						name="message"
+						placeholder="Message"
 						value={entryFields.message}
 						onChange={(e) =>
 							setEntryFields({
@@ -101,7 +102,17 @@ function Contact() {
 						}
 					/>
 				</div>
-				<input type="submit" value="Send" disabled={isSubmitting} />
+				<input
+					className="submit_button"
+					type="submit"
+					value="Send"
+					disabled={
+						isSubmitting ||
+						!entryFields.name ||
+						!entryFields.email ||
+						!entryFields.message
+					}
+				/>
 				{stateMessage && <p>{stateMessage}</p>}
 			</form>
 		</div>
