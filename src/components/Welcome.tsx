@@ -19,7 +19,7 @@ function Welcome() {
 				</div>
 			) : (
 				<div>
-					<img src={Logo} alt="logo" className="logo" />
+					<img src={Logo} alt="logo" className="logo_desktop" />
 					<h1 className="animate__animated animate__fadeInUp">
 						Fullstack Development, handled.
 					</h1>

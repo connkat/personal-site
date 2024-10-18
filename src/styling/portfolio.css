@@ -7,7 +7,7 @@
 }
 
 .wrapper_desktop {
-	height: 60vh;
+	height: 75vh;
 	display: flex;
 	flex-direction: row;
 	justify-content: space-between;
