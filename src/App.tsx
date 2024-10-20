@@ -1,14 +1,18 @@
-import "./styling/app.css";
 import React from "react";
+import { BrowserRouter, Routes, Route } from "react-router-dom";
 
-import { Welcome, Portfolio, Contact } from "./components";
+import "./styling/app.css";
+
+import Home from "./pages/Home";
 
 function App() {
 	return (
 		<div className="App">
-			<Welcome />
-			<Portfolio />
-			<Contact />
+			<BrowserRouter>
+				<Routes>
+					<Route path="/" element={<Home />} />
+				</Routes>
+			</BrowserRouter>
 		</div>
 	);
 }
