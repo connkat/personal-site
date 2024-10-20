@@ -7,6 +7,11 @@
 	}
 }
 
+.switch {
+	z-index: 100;
+	position: relative;
+}
+
 .Welcome:after {
 	content: "";
 	background-image: url("../assets/inversion.png");

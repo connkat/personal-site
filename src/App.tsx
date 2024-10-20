@@ -1,19 +1,28 @@
-import React from "react";
-import { BrowserRouter, Routes, Route } from "react-router-dom";
+import React, { useState } from "react";
+import { useMediaQuery } from "react-responsive";
 
 import "./styling/app.css";
 
 import { Home, Nineties } from "./pages";
 
 function App() {
+	const [isNineties, setIsNineties] = useState(false);
+	const isTabletOrMobile = useMediaQuery({ query: "(max-width: 800px)" });
+
+	const handle90sToggle = (checked: boolean): void => {
+		setIsNineties(!isNineties);
+	};
 	return (
 		<div className="App">
-			<BrowserRouter>
-				<Routes>
-					<Route path="/" element={<Home />} />
-					<Route path="/90s" element={<Nineties />} />
-				</Routes>
-			</BrowserRouter>
+			{isNineties ? (
+				<Nineties isNineties={isNineties} handle90sToggle={handle90sToggle} />
+			) : (
+				<Home
+					isNineties={isNineties}
+					isTabletOrMobile={isTabletOrMobile}
+					handle90sToggle={handle90sToggle}
+				/>
+			)}
 		</div>
 	);
 }

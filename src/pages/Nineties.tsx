@@ -1,12 +1,40 @@
 import "../styling/nineties.css";
 
-function Nineties() {
+import { fairyDustCursor } from "cursor-effects";
+
+import { NinetiesSwitch } from "src/components";
+
+type NinetiesProps = {
+	isNineties: boolean;
+	handle90sToggle: (checked: boolean) => void;
+};
+
+function Nineties(props: NinetiesProps) {
+	// @ts-expect-error Parameter 'name' implicitly has an 'any' type.ts(7006)
+	let cursorEffect = new fairyDustCursor({
+		colors: ["red", "blue"],
+	});
+	if (!props.isNineties) {
+		cursorEffect.destroy();
+	}
+
 	return (
-		<div className="Nineties">
+		<div id="Nineties">
 			<div className="content">
-				<h1 className="tab blink">Welcome to my website!</h1>
-				<img src="https://i.imgur.com/i6hvJjx.gif" alt="rainbow-divider" />
-				<div id="links">
+				<div className="header">
+					<NinetiesSwitch
+						isNineties={props.isNineties}
+						handle90sToggle={props.handle90sToggle}
+					/>
+					<h1 className="tab blink">Welcome to my website!</h1>
+					<img src="https://i.imgur.com/Q	kBkUkC.gif" alt="ie-logo" />
+				</div>
+				<img
+					src="https://i.imgur.com/i6hvJjx.gif"
+					alt="rainbow-divider"
+					className="rainbow-divider"
+				/>
+				<div id="nav">
 					<h4>
 						<a href="#home">Home</a> <span className="line">|</span>
 						<a href="#about">About Me</a> <span className="line">|</span>
@@ -101,10 +129,6 @@ function Nineties() {
 					<h3>Instead here are some of my fun personal projects:</h3>
 				</div>
 			</div>
-			<footer className="footer">
-				<p>Thanks for coming!</p>
-				<img src="https://i.imgur.com/Q	kBkUkC.gif" alt="ie-logo" />
-			</footer>
 		</div>
 	);
 }

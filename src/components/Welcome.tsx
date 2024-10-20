@@ -1,16 +1,26 @@
 import "animate.css";
 import "../styling/welcome.css";
 
-import { useMediaQuery } from "react-responsive";
+import NinetiesSwitch from "./NinetiesSwitch";
 
 import Logo from "../assets/logo-rectangle.png";
 
-function Welcome() {
-	const isTabletOrMobile = useMediaQuery({ query: "(max-width: 800px)" });
+type WelcomeProps = {
+	isNineties: boolean;
+	isTabletOrMobile: boolean;
+	handle90sToggle: (checked: boolean) => void;
+};
 
+function Welcome(props: WelcomeProps) {
 	return (
 		<div className="Welcome">
-			{isTabletOrMobile ? (
+			<div className="switch">
+				<NinetiesSwitch
+					isNineties={props.isNineties}
+					handle90sToggle={props.handle90sToggle}
+				/>
+			</div>
+			{props.isTabletOrMobile ? (
 				<div>
 					<img src={Logo} alt="logo" className="logo_mobile" />
 					<h1 className="animate__animated animate__fadeInUp">

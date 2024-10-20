@@ -1,5 +1,4 @@
 import { Carousel } from "react-responsive-carousel";
-import { useMediaQuery } from "react-responsive";
 import Fade from "react-reveal";
 
 import "../styling/portfolio.css";
@@ -17,14 +16,15 @@ import {
 	medium,
 } from "../assets/index";
 
-function Portfolio() {
-	const isTabletOrMobile = useMediaQuery({ query: "(max-width: 800px)" });
+type PortfolioProps = {
+	isTabletOrMobile: boolean;
+};
 
+function Portfolio(props: PortfolioProps) {
 	function handleClick(index: number): void | undefined {
 		if (index === 0) {
 			window.open("http://coffee-fix.net");
 		}
-
 		if (index === 1) {
 			window.open("http://theyellowdubmarine.com");
 		}
@@ -41,9 +41,15 @@ function Portfolio() {
 
 	return (
 		<div className="Portfolio">
-			<div className={isTabletOrMobile ? "wrapper_mobile" : "wrapper_desktop"}>
+			<div
+				className={
+					props.isTabletOrMobile ? "wrapper_mobile" : "wrapper_desktop"
+				}
+			>
 				<div
-					className={isTabletOrMobile ? "textBox_mobile" : "textBox_desktop"}
+					className={
+						props.isTabletOrMobile ? "textBox_mobile" : "textBox_desktop"
+					}
 				>
 					<Fade duration={5000}>
 						<h1>About Kat</h1>
@@ -83,7 +89,9 @@ function Portfolio() {
 					<Fade duration={5000}>
 						<div
 							className={
-								isTabletOrMobile ? "icon-links_mobile" : "icon-links_desktop"
+								props.isTabletOrMobile
+									? "icon-links_mobile"
+									: "icon-links_desktop"
 							}
 						>
 							<a
@@ -122,7 +130,9 @@ function Portfolio() {
 					</Fade>
 				</div>
 				<div
-					className={isTabletOrMobile ? "fun-work_mobile" : "fun-work_desktop"}
+					className={
+						props.isTabletOrMobile ? "fun-work_mobile" : "fun-work_desktop"
+					}
 				>
 					<Fade duration={5000}>
 						<h1>Fun projects</h1>
@@ -161,7 +171,7 @@ function Portfolio() {
 								autoPlay={true}
 								infiniteLoop={true}
 								interval={2000}
-								width={isTabletOrMobile ? "70%" : "50%"}
+								width={props.isTabletOrMobile ? "70%" : "50%"}
 								showThumbs={false}
 								showStatus={false}
 								onClickItem={(index, item) => handleClick(index)}
