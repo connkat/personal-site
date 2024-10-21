@@ -1,44 +1,17 @@
-import { Carousel } from "react-responsive-carousel";
 import Fade from "react-reveal";
+
+import ProjectCarousel from "../shared/ProjectCarousel";
 
 import "../../styling/default/portfolio.css";
 import "react-responsive-carousel/lib/styles/carousel.min.css";
 
-import {
-	calc,
-	pixels,
-	coffee,
-	fwf,
-	dub,
-	linkedIn,
-	resume,
-	github,
-	medium,
-} from "../../assets/index";
+import { linkedIn, resume, github, medium } from "../../assets/index";
 
 type PortfolioProps = {
 	isTabletOrMobile: boolean;
 };
 
 export default function Portfolio({ isTabletOrMobile }: PortfolioProps) {
-	function handleClick(index: number): void | undefined {
-		if (index === 0) {
-			window.open("http://coffee-fix.net");
-		}
-		if (index === 1) {
-			window.open("http://theyellowdubmarine.com");
-		}
-		if (index === 2) {
-			window.open("https://pixels-og.netlify.app/");
-		}
-		if (index === 3) {
-			window.open("http://freezerburnwrestlingfederation.com");
-		}
-		if (index === 4) {
-			window.open("https://cf-sprint-calc.netlify.app");
-		}
-	}
-
 	return (
 		<div className="Portfolio">
 			<div className={isTabletOrMobile ? "wrapper_mobile" : "wrapper_desktop"}>
@@ -157,21 +130,7 @@ export default function Portfolio({ isTabletOrMobile }: PortfolioProps) {
 							<h3>Instead here are some of my fun personal projects:</h3>
 						</div>
 						<div className="carousel">
-							<Carousel
-								autoPlay={true}
-								infiniteLoop={true}
-								interval={2000}
-								width={isTabletOrMobile ? "70%" : "50%"}
-								showThumbs={false}
-								showStatus={false}
-								onClickItem={(index, item) => handleClick(index)}
-							>
-								<img src={coffee} alt="coffee" />
-								<img src={dub} alt="dub" />
-								<img src={pixels} alt="pixels" />
-								<img src={fwf} alt="fwf" />
-								<img src={calc} alt="calc" />
-							</Carousel>
+							<ProjectCarousel isTabletOrMobile={isTabletOrMobile} />
 						</div>
 					</Fade>
 				</div>

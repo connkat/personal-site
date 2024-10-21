@@ -1,6 +1,14 @@
 import "../../styling/nineties/nineties-projects.css";
 
-export default function NinetiesProjects() {
+import ProjectCarousel from "../shared/ProjectCarousel";
+
+type NinetiesProjectProps = {
+	isTabletOrMobile: boolean;
+};
+
+export default function NinetiesProjects({
+	isTabletOrMobile,
+}: NinetiesProjectProps) {
 	return (
 		<div id="projects">
 			<div className="project content">
@@ -24,6 +32,9 @@ export default function NinetiesProjects() {
 					is for.
 				</h3>
 				<h3>Instead here are some of my fun personal projects:</h3>
+				<div className="carousel">
+					<ProjectCarousel isTabletOrMobile={isTabletOrMobile} />
+				</div>
 			</div>
 		</div>
 	);

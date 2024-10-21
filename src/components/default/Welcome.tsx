@@ -1,7 +1,7 @@
 import "animate.css";
 import "../../styling/default/welcome.css";
 
-import NinetiesSwitch from "../NinetiesSwitch";
+import NinetiesSwitch from "../shared/NinetiesSwitch";
 
 import Logo from "../../assets/logo-rectangle.png";
 

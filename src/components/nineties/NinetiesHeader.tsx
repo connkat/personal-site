@@ -1,7 +1,7 @@
 import React from "react";
 import "../../styling/nineties/nineties-header.css";
 
-import NinetiesSwitch from "../NinetiesSwitch";
+import NinetiesSwitch from "../shared/NinetiesSwitch";
 
 type NinetiesProps = {
 	isNineties: boolean;

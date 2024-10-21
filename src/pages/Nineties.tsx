@@ -10,11 +10,13 @@ import {
 type NinetiesProps = {
 	isNineties: boolean;
 	handle90sToggle: (checked: boolean) => void;
+	isTabletOrMobile: boolean;
 };
 
 export default function Nineties({
 	isNineties,
 	handle90sToggle,
+	isTabletOrMobile,
 }: NinetiesProps) {
 	return (
 		<div id="Nineties">
@@ -29,7 +31,7 @@ export default function Nineties({
 				<NinetiesLinks />
 
 				<h2>Projects</h2>
-				<NinetiesProjects />
+				<NinetiesProjects isTabletOrMobile={isTabletOrMobile} />
 			</div>
 		</div>
 	);

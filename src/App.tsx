@@ -29,7 +29,11 @@ function App() {
 	return (
 		<div className="App">
 			{isNineties ? (
-				<Nineties isNineties={isNineties} handle90sToggle={handle90sToggle} />
+				<Nineties
+					isNineties={isNineties}
+					handle90sToggle={handle90sToggle}
+					isTabletOrMobile={isTabletOrMobile}
+				/>
 			) : (
 				<Default
 					isNineties={isNineties}

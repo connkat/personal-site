@@ -52,30 +52,3 @@
 	background-color: #ffffff;
 	padding: 5%;
 }
-
-.carousel:hover {
-	cursor: pointer;
-}
-
-.carousel-root {
-	transform: scaleX(-1);
-}
-
-.react-reveal.carousel {
-	img {
-		max-width: 80%;
-		max-height: 75%;
-		transform: scaleX(-1);
-	}
-}
-
-@media only screen and (max-width: 800px) {
-	.react-reveal.carousel {
-		margin-left: 15%;
-		width: 90%;
-		img {
-			max-width: 80%;
-			max-height: 75%;
-		}
-	}
-}
