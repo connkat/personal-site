@@ -11,7 +11,7 @@ type WelcomeProps = {
 	handle90sToggle: (checked: boolean) => void;
 };
 
-function Welcome({
+export default function Welcome({
 	isNineties,
 	isTabletOrMobile,
 	handle90sToggle,
@@ -42,5 +42,3 @@ function Welcome({
 		</div>
 	);
 }
-
-export default Welcome;

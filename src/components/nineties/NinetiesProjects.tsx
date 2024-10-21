@@ -1,4 +1,4 @@
-import React from "react";
+import "../../styling/nineties/nineties-projects.css";
 
 export default function NinetiesProjects() {
 	return (

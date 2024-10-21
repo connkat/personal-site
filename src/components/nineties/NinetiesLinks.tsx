@@ -1,6 +1,6 @@
 import "../../styling/nineties/nineties-links.css";
 
-function NinetiesLinks() {
+export default function NinetiesLinks() {
 	return (
 		<div id="links">
 			<div className="image-links content">
@@ -68,5 +68,3 @@ function NinetiesLinks() {
 		</div>
 	);
 }
-
-export default NinetiesLinks;

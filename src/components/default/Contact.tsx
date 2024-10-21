@@ -4,7 +4,7 @@ import emailjs from "@emailjs/browser";
 
 import "../../styling/default/contact.css";
 
-function Contact() {
+export default function Contact() {
 	const [isSubmitting, setIsSubmitting] = useState(false);
 	const [stateMessage, setStateMessage] = useState("");
 	const [entryFields, setEntryFields] = useState({
@@ -122,5 +122,3 @@ function Contact() {
 		</div>
 	);
 }
-
-export default Contact;

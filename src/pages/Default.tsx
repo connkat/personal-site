@@ -8,7 +8,7 @@ type DefaultProps = {
 	handle90sToggle: (checked: boolean) => void;
 };
 
-function Default({
+export default function Default({
 	isNineties,
 	isTabletOrMobile,
 	handle90sToggle,
@@ -25,5 +25,3 @@ function Default({
 		</div>
 	);
 }
-
-export default Default;

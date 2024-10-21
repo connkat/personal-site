@@ -20,7 +20,7 @@ type PortfolioProps = {
 	isTabletOrMobile: boolean;
 };
 
-function Portfolio({ isTabletOrMobile }: PortfolioProps) {
+export default function Portfolio({ isTabletOrMobile }: PortfolioProps) {
 	function handleClick(index: number): void | undefined {
 		if (index === 0) {
 			window.open("http://coffee-fix.net");
@@ -179,5 +179,3 @@ function Portfolio({ isTabletOrMobile }: PortfolioProps) {
 		</div>
 	);
 }
-
-export default Portfolio;

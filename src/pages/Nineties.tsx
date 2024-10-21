@@ -1,8 +1,7 @@
-import { CSSProperties } from "react";
-
 import "../styling/nineties/nineties.css";
 
 import {
+	NinetiesAbout,
 	NinetiesHeader,
 	NinetiesLinks,
 	NinetiesProjects,
@@ -13,10 +12,10 @@ type NinetiesProps = {
 	handle90sToggle: (checked: boolean) => void;
 };
 
-function Nineties({ isNineties, handle90sToggle }: NinetiesProps) {
-	const smolStyle: CSSProperties = {
-		fontSize: 8,
-	};
+export default function Nineties({
+	isNineties,
+	handle90sToggle,
+}: NinetiesProps) {
 	return (
 		<div id="Nineties">
 			<div className="content">
@@ -25,14 +24,7 @@ function Nineties({ isNineties, handle90sToggle }: NinetiesProps) {
 					handle90sToggle={handle90sToggle}
 				/>
 				<h2>About Me:</h2>
-				<div id="about">
-					<div className="about-me content">
-						<div className="smol-joke">
-							<p>I am passionate about web design!</p>
-							<p style={smolStyle}>~*just kidding*~</p>
-						</div>
-					</div>
-				</div>
+				<NinetiesAbout />
 				<h2>Links:</h2>
 				<NinetiesLinks />
 
@@ -42,5 +34,3 @@ function Nineties({ isNineties, handle90sToggle }: NinetiesProps) {
 		</div>
 	);
 }
-
-export default Nineties;
