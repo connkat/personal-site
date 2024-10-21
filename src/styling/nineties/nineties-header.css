@@ -11,3 +11,7 @@
 	flex-direction: row;
 	justify-content: space-evenly;
 }
+
+.rainbow-divider {
+	width: 100%;
+}

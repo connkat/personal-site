@@ -11,16 +11,20 @@ type WelcomeProps = {
 	handle90sToggle: (checked: boolean) => void;
 };
 
-function Welcome(props: WelcomeProps) {
+function Welcome({
+	isNineties,
+	isTabletOrMobile,
+	handle90sToggle,
+}: WelcomeProps) {
 	return (
 		<div className="Welcome">
 			<div className="switch">
 				<NinetiesSwitch
-					isNineties={props.isNineties}
-					handle90sToggle={props.handle90sToggle}
+					isNineties={isNineties}
+					handle90sToggle={handle90sToggle}
 				/>
 			</div>
-			{props.isTabletOrMobile ? (
+			{isTabletOrMobile ? (
 				<div>
 					<img src={Logo} alt="logo" className="logo_mobile" />
 					<h1 className="animate__animated animate__fadeInUp">

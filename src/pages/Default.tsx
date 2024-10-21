@@ -8,15 +8,19 @@ type DefaultProps = {
 	handle90sToggle: (checked: boolean) => void;
 };
 
-function Default(props: DefaultProps) {
+function Default({
+	isNineties,
+	isTabletOrMobile,
+	handle90sToggle,
+}: DefaultProps) {
 	return (
 		<div className="Default">
 			<Welcome
-				isNineties={props.isNineties}
-				isTabletOrMobile={props.isTabletOrMobile}
-				handle90sToggle={props.handle90sToggle}
+				isNineties={isNineties}
+				isTabletOrMobile={isTabletOrMobile}
+				handle90sToggle={handle90sToggle}
 			/>
-			<Portfolio isTabletOrMobile={props.isTabletOrMobile} />
+			<Portfolio isTabletOrMobile={isTabletOrMobile} />
 			<Contact />
 		</div>
 	);

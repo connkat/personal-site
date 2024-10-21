@@ -20,7 +20,7 @@ type PortfolioProps = {
 	isTabletOrMobile: boolean;
 };
 
-function Portfolio(props: PortfolioProps) {
+function Portfolio({ isTabletOrMobile }: PortfolioProps) {
 	function handleClick(index: number): void | undefined {
 		if (index === 0) {
 			window.open("http://coffee-fix.net");
@@ -41,15 +41,9 @@ function Portfolio(props: PortfolioProps) {
 
 	return (
 		<div className="Portfolio">
-			<div
-				className={
-					props.isTabletOrMobile ? "wrapper_mobile" : "wrapper_desktop"
-				}
-			>
+			<div className={isTabletOrMobile ? "wrapper_mobile" : "wrapper_desktop"}>
 				<div
-					className={
-						props.isTabletOrMobile ? "textBox_mobile" : "textBox_desktop"
-					}
+					className={isTabletOrMobile ? "textBox_mobile" : "textBox_desktop"}
 				>
 					<Fade duration={5000}>
 						<h1>About Kat</h1>
@@ -89,9 +83,7 @@ function Portfolio(props: PortfolioProps) {
 					<Fade duration={5000}>
 						<div
 							className={
-								props.isTabletOrMobile
-									? "icon-links_mobile"
-									: "icon-links_desktop"
+								isTabletOrMobile ? "icon-links_mobile" : "icon-links_desktop"
 							}
 						>
 							<a
@@ -130,9 +122,7 @@ function Portfolio(props: PortfolioProps) {
 					</Fade>
 				</div>
 				<div
-					className={
-						props.isTabletOrMobile ? "fun-work_mobile" : "fun-work_desktop"
-					}
+					className={isTabletOrMobile ? "fun-work_mobile" : "fun-work_desktop"}
 				>
 					<Fade duration={5000}>
 						<h1>Fun projects</h1>
@@ -171,7 +161,7 @@ function Portfolio(props: PortfolioProps) {
 								autoPlay={true}
 								infiniteLoop={true}
 								interval={2000}
-								width={props.isTabletOrMobile ? "70%" : "50%"}
+								width={isTabletOrMobile ? "70%" : "50%"}
 								showThumbs={false}
 								showStatus={false}
 								onClickItem={(index, item) => handleClick(index)}

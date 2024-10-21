@@ -5,13 +5,13 @@ type NinetiesSwitchProps = {
 	handle90sToggle: (checked: boolean) => void;
 };
 
-function NinetiesSwitch(props: NinetiesSwitchProps) {
+function NinetiesSwitch({ isNineties, handle90sToggle }: NinetiesSwitchProps) {
 	return (
 		<div className="Switch">
 			<Switch
 				name="90sToggle"
-				checked={props.isNineties}
-				onChange={() => props.handle90sToggle(props.isNineties)}
+				checked={isNineties}
+				onChange={() => handle90sToggle(isNineties)}
 			/>
 		</div>
 	);
