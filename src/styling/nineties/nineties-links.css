@@ -1,0 +1,15 @@
+#links {
+	padding: 0 5vh;
+}
+
+.image-links {
+	display: flex;
+	flex-direction: row;
+	justify-content: space-evenly;
+}
+
+.single-link {
+	display: flex;
+	flex-direction: row;
+	text-align: center;
+}

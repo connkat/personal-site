@@ -1,4 +1,4 @@
-import Home from "./Home";
+import Default from "./Default";
 import Nineties from "./Nineties";
 
-export { Home, Nineties };
+export { Default, Nineties };

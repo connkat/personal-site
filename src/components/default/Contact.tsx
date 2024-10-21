@@ -2,7 +2,7 @@ import { FormEvent } from "react";
 import { useState } from "react";
 import emailjs from "@emailjs/browser";
 
-import "../styling/contact.css";
+import "../../styling/default/contact.css";
 
 function Contact() {
 	const [isSubmitting, setIsSubmitting] = useState(false);

@@ -4,7 +4,7 @@ import { fairyDustCursor } from "cursor-effects";
 
 import "./styling/app.css";
 
-import { Home, Nineties } from "./pages";
+import { Default, Nineties } from "./pages";
 
 function App() {
 	const [isNineties, setIsNineties] = useState(false);
@@ -31,7 +31,7 @@ function App() {
 			{isNineties ? (
 				<Nineties isNineties={isNineties} handle90sToggle={handle90sToggle} />
 			) : (
-				<Home
+				<Default
 					isNineties={isNineties}
 					isTabletOrMobile={isTabletOrMobile}
 					handle90sToggle={handle90sToggle}

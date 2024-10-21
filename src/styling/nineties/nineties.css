@@ -10,13 +10,6 @@
 	flex-direction: column;
 }
 
-.header {
-	display: flex;
-	flex-direction: row;
-	justify-content: space-between;
-	align-items: center;
-	padding: 2vh 2vh;
-}
 
 h1 {
 	text-align: center;
@@ -35,12 +28,6 @@ span.line {
 	width: 100%;
 }
 
-#nav {
-	display: flex;
-	flex-direction: row;
-	justify-content: space-evenly;
-}
-
 #about {
 	padding: 0 5vh;
 
@@ -51,22 +38,6 @@ span.line {
 
 .content {
 	padding: 0 5vh;
-}
-
-#links {
-	padding: 0 5vh;
-}
-
-.image-links {
-	display: flex;
-	flex-direction: row;
-	justify-content: space-evenly;
-}
-
-.single-link {
-	display: flex;
-	flex-direction: row;
-	text-align: center;
 }
 
 #projects {

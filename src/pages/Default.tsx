@@ -1,16 +1,16 @@
-import "../styling/home.css";
+import "../styling/default/default.css";
 
-import { Welcome, Portfolio, Contact } from "../components";
+import { Welcome, Portfolio, Contact } from "../components/default";
 
-type HomeProps = {
+type DefaultProps = {
 	isNineties: boolean;
 	isTabletOrMobile: boolean;
 	handle90sToggle: (checked: boolean) => void;
 };
 
-function Home(props: HomeProps) {
+function Default(props: DefaultProps) {
 	return (
-		<div className="Home">
+		<div className="Default">
 			<Welcome
 				isNineties={props.isNineties}
 				isTabletOrMobile={props.isTabletOrMobile}
@@ -22,4 +22,4 @@ function Home(props: HomeProps) {
 	);
 }
 
-export default Home;
+export default Default;

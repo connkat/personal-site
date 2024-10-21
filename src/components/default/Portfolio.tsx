@@ -1,7 +1,7 @@
 import { Carousel } from "react-responsive-carousel";
 import Fade from "react-reveal";
 
-import "../styling/portfolio.css";
+import "../../styling/default/portfolio.css";
 import "react-responsive-carousel/lib/styles/carousel.min.css";
 
 import {
@@ -14,7 +14,7 @@ import {
 	resume,
 	github,
 	medium,
-} from "../assets/index";
+} from "../../assets/index";
 
 type PortfolioProps = {
 	isTabletOrMobile: boolean;

@@ -1,9 +1,9 @@
 import "animate.css";
-import "../styling/welcome.css";
+import "../../styling/default/welcome.css";
 
-import NinetiesSwitch from "./NinetiesSwitch";
+import NinetiesSwitch from "../NinetiesSwitch";
 
-import Logo from "../assets/logo-rectangle.png";
+import Logo from "../../assets/logo-rectangle.png";
 
 type WelcomeProps = {
 	isNineties: boolean;
