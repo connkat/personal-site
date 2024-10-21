@@ -1,5 +1,6 @@
-import React from "react";
 import Switch from "react-switch";
+
+import "../styling/ninetiesSwitch.css";
 
 type NinetiesSwitchProps = {
 	isNineties: boolean;

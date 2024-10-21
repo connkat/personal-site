@@ -1,7 +1,5 @@
 import "../styling/nineties.css";
 
-import { fairyDustCursor } from "cursor-effects";
-
 import { NinetiesSwitch } from "src/components";
 
 type NinetiesProps = {
@@ -10,14 +8,6 @@ type NinetiesProps = {
 };
 
 function Nineties(props: NinetiesProps) {
-	// @ts-expect-error Parameter 'name' implicitly has an 'any' type.ts(7006)
-	let cursorEffect = new fairyDustCursor({
-		colors: ["red", "blue"],
-	});
-	if (!props.isNineties) {
-		cursorEffect.destroy();
-	}
-
 	return (
 		<div id="Nineties">
 			<div className="content">

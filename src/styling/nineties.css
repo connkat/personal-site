@@ -15,12 +15,12 @@
 	flex-direction: row;
 	justify-content: space-between;
 	align-items: center;
-	padding: 5vh;
-
+	padding: 2vh 5vh;
 }
 
 h1 {
 	text-align: center;
+	line-height: 0;
 }
 
 a:hover {
