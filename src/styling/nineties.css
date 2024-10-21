@@ -15,7 +15,7 @@
 	flex-direction: row;
 	justify-content: space-between;
 	align-items: center;
-	padding: 2vh 5vh;
+	padding: 2vh 2vh;
 }
 
 h1 {
@@ -44,9 +44,20 @@ span.line {
 #about {
 	padding: 0 5vh;
 
+	.smol-joke {
+		display: flex;
+	}
+}
+
+.content {
+	padding: 0 5vh;
 }
 
 #links {
+	padding: 0 5vh;
+}
+
+.image-links {
 	display: flex;
 	flex-direction: row;
 	justify-content: space-evenly;
@@ -60,7 +71,6 @@ span.line {
 
 #projects {
 	padding: 0 5vh;
-
 }
 
 .blink {

@@ -10,6 +10,8 @@
 .switch {
 	z-index: 100;
 	position: relative;
+	margin: 4vh;
+
 }
 
 .Welcome:after {

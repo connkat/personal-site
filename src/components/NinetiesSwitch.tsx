@@ -1,7 +1,5 @@
 import Switch from "react-switch";
 
-import "../styling/ninetiesSwitch.css";
-
 type NinetiesSwitchProps = {
 	isNineties: boolean;
 	handle90sToggle: (checked: boolean) => void;
