@@ -53,7 +53,7 @@ export default function NinetiesContact() {
 		setStateMessage("");
 	};
 	return (
-		<div className="NinetiesContact">
+		<div id="contact" className="NinetiesContact">
 			<div className="nineties-contact content">
 				<form id="form" onSubmit={sendEmail}>
 					<div className="inputs">

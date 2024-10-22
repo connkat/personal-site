@@ -3,6 +3,7 @@ import NinetiesLinks from "./NinetiesLinks";
 import NinetiesProjects from "./NinetiesProjects";
 import NinetiesAbout from "./NinetiesAbout";
 import NinetiesContact from "./NinetiesContact";
+import NinetiesSiteMap from "./NinetiesSiteMap";
 
 export {
 	NinetiesHeader,
@@ -10,4 +11,5 @@ export {
 	NinetiesProjects,
 	NinetiesAbout,
 	NinetiesContact,
+	NinetiesSiteMap,
 };

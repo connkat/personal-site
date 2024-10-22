@@ -1,6 +1,6 @@
 import "../../styling/nineties/nineties-header.css";
 
-import useMediaQuery from "src/hooks/useMediaQuery";
+import useMediaQuery from "../../hooks/useMediaQuery";
 
 import NinetiesSwitch from "../shared/NinetiesSwitch";
 
@@ -34,14 +34,6 @@ function NinetiesHeader({ isNineties, handle90sToggle }: NinetiesProps) {
 				alt="rainbow-divider"
 				className="rainbow-divider"
 			/>
-			<div id="nav" className={isMobileOrTable ? "nav_mobile" : "nav_desktop"}>
-				<h2>
-					<a href=".">Home</a> <span className="line">|</span>
-					<a href="#about">About Me</a> <span className="line">|</span>
-					<a href="#links">Links</a> <span className="line">|</span>
-					<a href="#projects">Projects</a> <span className="line">|</span>
-				</h2>
-			</div>
 		</div>
 	);
 }

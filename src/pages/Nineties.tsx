@@ -6,6 +6,7 @@ import {
 	NinetiesLinks,
 	NinetiesProjects,
 	NinetiesContact,
+	NinetiesSiteMap,
 } from "../components/nineties";
 
 import useMediaQuery from "src/hooks/useMediaQuery";
@@ -36,6 +37,7 @@ export default function Nineties({
 				<NinetiesProjects />
 				<h2>Contact</h2>
 				<NinetiesContact />
+				<NinetiesSiteMap />
 			</div>
 		</div>
 	);
