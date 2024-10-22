@@ -1,3 +1,8 @@
+@font-face {
+	font-family: "Comic Sans MS";
+	src: url("src/fonts/ComicSansMS3.ttf");
+}
+
 #Nineties {
 	height: 100%;
 	background-size: cover;
@@ -32,8 +37,8 @@ span.line {
 	p {
 		font-size: 12px;
 	}
-	
-	h2{
+
+	h2 {
 		padding: 0 3vw;
 	}
 }
