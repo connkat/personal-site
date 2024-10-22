@@ -6,7 +6,7 @@ export default function NinetiesProjects() {
 	return (
 		<div id="projects">
 			<div className="nineties-projects content">
-				<h3>
+				<p>
 					I could go on about my professional experience with{" "}
 					<a href="http://neofinancial.com" target="_blank" rel="noreferrer">
 						Neo Financial
@@ -24,8 +24,8 @@ export default function NinetiesProjects() {
 						resume
 					</a>{" "}
 					is for.
-				</h3>
-				<h3>Instead here are some of my fun personal projects:</h3>
+				</p>
+				<p>Instead here are some of my fun personal projects:</p>
 				<div className="carousel">
 					<ProjectCarousel />
 				</div>

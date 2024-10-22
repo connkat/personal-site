@@ -1,0 +1,11 @@
+.NinetiesAbout_desktop {
+	padding: 0 5vh;
+
+	.smol-joke {
+		display: flex;
+	}
+}
+
+.NinetiesAbout_mobile {
+	padding: 0 5vh;
+}

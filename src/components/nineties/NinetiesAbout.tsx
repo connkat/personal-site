@@ -1,11 +1,22 @@
 import { CSSProperties } from "react";
 
+import "../../styling/nineties/nineties-about.css";
+
+import useMediaQuery from "src/hooks/useMediaQuery";
+
 export default function NinetiesAbout() {
+	const isMobileOrTable = useMediaQuery("(max-width: 800px)");
+
 	const smolStyle: CSSProperties = {
 		fontSize: 8,
+		paddingTop: "1vh",
 	};
 	return (
-		<div className="NinetiesAbout">
+		<div
+			className={
+				isMobileOrTable ? "NinetiesAbout_mobile" : "NinetiesAbout_desktop"
+			}
+		>
 			<div id="about">
 				<div className="about-me content">
 					<div className="smol-joke">

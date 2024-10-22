@@ -19,22 +19,23 @@ h1 {
 	line-height: 0;
 }
 
-
-
 span.line {
 	color: red;
 }
 
-#about {
+.content_desktop {
 	padding: 0 5vh;
-
-	.smol-joke {
-		display: flex;
-	}
 }
 
-.content {
-	padding: 0 5vh;
+.content_mobile {
+	padding: 0;
+	p {
+		font-size: 12px;
+	}
+	
+	h2{
+		padding: 0 3vw;
+	}
 }
 
 .blink {

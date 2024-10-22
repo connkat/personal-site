@@ -7,15 +7,22 @@ import {
 	NinetiesProjects,
 } from "../components/nineties";
 
+import useMediaQuery from "src/hooks/useMediaQuery";
+
 type NinetiesProps = {
 	isNineties: boolean;
 	handle90sToggle: (checked: boolean) => void;
 };
 
-export default function Nineties({ isNineties, handle90sToggle }: NinetiesProps) {
+export default function Nineties({
+	isNineties,
+	handle90sToggle,
+}: NinetiesProps) {
+	const isMobileOrTable = useMediaQuery("(max-width: 800px)");
+
 	return (
 		<div id="Nineties">
-			<div className="content">
+			<div className={isMobileOrTable ? "content_mobile" : "content_desktop"}>
 				<NinetiesHeader
 					isNineties={isNineties}
 					handle90sToggle={handle90sToggle}
@@ -24,7 +31,6 @@ export default function Nineties({ isNineties, handle90sToggle }: NinetiesProps)
 				<NinetiesAbout />
 				<h2>Links:</h2>
 				<NinetiesLinks />
-
 				<h2>Projects</h2>
 				<NinetiesProjects />
 			</div>

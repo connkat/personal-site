@@ -6,7 +6,8 @@
 	.carousel {
 		display: flex;
 		justify-content: center;
-		padding-left: 3vw;
+		margin:auto;
+		padding-bottom: 2vh;
 
 		.carousel-root {
 			transform: scaleX(+1);

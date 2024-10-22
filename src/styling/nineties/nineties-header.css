@@ -1,4 +1,4 @@
-.header {
+.header_desktop {
 	display: flex;
 	flex-direction: row;
 	justify-content: space-between;
@@ -6,10 +6,26 @@
 	padding: 2vh 2vh;
 }
 
+.header_mobile {
+	display: flex;
+	flex-direction: row;
+	justify-content: space-between;
+	align-items: center;
+	padding: 2vh 2vh;
+
+	h1 {
+		font-size: 16px;
+	}
+}
+
 #nav {
 	display: flex;
 	flex-direction: row;
 	justify-content: space-evenly;
+}
+
+.nav_mobile {
+	font-size: 11px;
 }
 
 .rainbow-divider {
