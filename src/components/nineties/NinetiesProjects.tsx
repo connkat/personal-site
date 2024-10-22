@@ -20,7 +20,11 @@ export default function NinetiesProjects() {
 						Checkfront
 					</a>
 					, or my Freelance work, but that is what a{" "}
-					<a href="https://github.com/connkat/Resume/blob/master/KConnolly.pdf">
+					<a
+						target="_blank"
+						rel="noreferrer"
+						href="https://github.com/connkat/Resume/blob/master/KConnolly.pdf"
+					>
 						resume
 					</a>{" "}
 					is for.
