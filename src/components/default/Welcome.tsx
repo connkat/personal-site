@@ -1,5 +1,6 @@
 import "animate.css";
 import "../../styling/default/welcome.css";
+import useMediaQuery from "src/hooks/useMediaQuery";
 
 import NinetiesSwitch from "../shared/NinetiesSwitch";
 
@@ -7,15 +8,12 @@ import Logo from "../../assets/logo-rectangle.png";
 
 type WelcomeProps = {
 	isNineties: boolean;
-	isTabletOrMobile: boolean;
 	handle90sToggle: (checked: boolean) => void;
 };
 
-export default function Welcome({
-	isNineties,
-	isTabletOrMobile,
-	handle90sToggle,
-}: WelcomeProps) {
+export default function Welcome({ isNineties, handle90sToggle }: WelcomeProps) {
+	const isMobileOrTable = useMediaQuery("(max-width: 800px)");
+
 	return (
 		<div className="Welcome">
 			<div className="switch">
@@ -24,7 +22,7 @@ export default function Welcome({
 					handle90sToggle={handle90sToggle}
 				/>
 			</div>
-			{isTabletOrMobile ? (
+			{isMobileOrTable ? (
 				<div>
 					<img src={Logo} alt="logo" className="logo_mobile" />
 					<h1 className="animate__animated animate__fadeInUp">

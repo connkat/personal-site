@@ -8,6 +8,10 @@
 	display: flex;
 	justify-content: space-between;
 	flex-direction: column;
+
+	a:hover {
+		background-color: white;
+	}
 }
 
 h1 {
@@ -15,9 +19,7 @@ h1 {
 	line-height: 0;
 }
 
-a:hover {
-	background-color: white;
-}
+
 
 span.line {
 	color: red;

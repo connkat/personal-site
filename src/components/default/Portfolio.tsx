@@ -5,18 +5,18 @@ import ProjectCarousel from "../shared/ProjectCarousel";
 import "../../styling/default/portfolio.css";
 import "react-responsive-carousel/lib/styles/carousel.min.css";
 
+import useMediaQuery from "src/hooks/useMediaQuery";
+
 import { linkedIn, resume, github, medium } from "../../assets/index";
 
-type PortfolioProps = {
-	isTabletOrMobile: boolean;
-};
+export default function Portfolio() {
+	const isMobileOrTablet = useMediaQuery("(max-width: 800px)");
 
-export default function Portfolio({ isTabletOrMobile }: PortfolioProps) {
 	return (
 		<div className="Portfolio">
-			<div className={isTabletOrMobile ? "wrapper_mobile" : "wrapper_desktop"}>
+			<div className={isMobileOrTablet ? "wrapper_mobile" : "wrapper_desktop"}>
 				<div
-					className={isTabletOrMobile ? "textBox_mobile" : "textBox_desktop"}
+					className={isMobileOrTablet ? "textBox_mobile" : "textBox_desktop"}
 				>
 					<Fade duration={5000}>
 						<h1>About Kat</h1>
@@ -56,7 +56,7 @@ export default function Portfolio({ isTabletOrMobile }: PortfolioProps) {
 					<Fade duration={5000}>
 						<div
 							className={
-								isTabletOrMobile ? "icon-links_mobile" : "icon-links_desktop"
+								isMobileOrTablet ? "icon-links_mobile" : "icon-links_desktop"
 							}
 						>
 							<a
@@ -95,7 +95,7 @@ export default function Portfolio({ isTabletOrMobile }: PortfolioProps) {
 					</Fade>
 				</div>
 				<div
-					className={isTabletOrMobile ? "fun-work_mobile" : "fun-work_desktop"}
+					className={isMobileOrTablet ? "fun-work_mobile" : "fun-work_desktop"}
 				>
 					<Fade duration={5000}>
 						<h1>Fun projects</h1>
@@ -130,7 +130,7 @@ export default function Portfolio({ isTabletOrMobile }: PortfolioProps) {
 							<h3>Instead here are some of my fun personal projects:</h3>
 						</div>
 						<div className="carousel">
-							<ProjectCarousel isTabletOrMobile={isTabletOrMobile} />
+							<ProjectCarousel />
 						</div>
 					</Fade>
 				</div>

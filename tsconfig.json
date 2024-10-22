@@ -17,5 +17,5 @@
 		"jsx": "react-jsx",
 		"baseUrl": "."
 	},
-	"include": ["**/*.ts"]
+	"include": ["**/*.ts", "src/hooks/useMediaQuery.tsx"]
 }

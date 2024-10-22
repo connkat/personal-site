@@ -3,15 +3,13 @@ import { Carousel } from "react-responsive-carousel";
 import "react-responsive-carousel/lib/styles/carousel.min.css";
 import "../../styling/project-carousel.css";
 
+import useMediaQuery from "../../hooks/useMediaQuery";
+
 import { calc, pixels, coffee, fwf, dub } from "../../assets/index";
 
-type ProjectCarouselProps = {
-	isTabletOrMobile: boolean;
-};
+export default function ProjectCarousel() {
+	const isMobileOrTable = useMediaQuery("(max-width: 800px)");
 
-export default function ProjectCarousel({
-	isTabletOrMobile,
-}: ProjectCarouselProps) {
 	function handleClick(index: number): void | undefined {
 		if (index === 0) {
 			window.open("http://coffee-fix.net");
@@ -37,16 +35,16 @@ export default function ProjectCarousel({
 					autoPlay={true}
 					infiniteLoop={true}
 					interval={2000}
-					width={isTabletOrMobile ? "70%" : "50%"}
+					width={isMobileOrTable ? "70%" : "50%"}
 					showThumbs={false}
 					showStatus={false}
 					onClickItem={(index, item) => handleClick(index)}
 				>
-					<img src={coffee} alt="coffee" />
-					<img src={dub} alt="dub" />
-					<img src={pixels} alt="pixels" />
-					<img src={fwf} alt="fwf" />
-					<img src={calc} alt="calc" />
+					<img className="proj-image" src={coffee} alt="coffee" />
+					<img className="proj-image" src={dub} alt="dub" />
+					<img className="proj-image" src={pixels} alt="pixels" />
+					<img className="proj-image" src={fwf} alt="fwf" />
+					<img className="proj-image" src={calc} alt="calc" />
 				</Carousel>
 			</div>
 		</div>
