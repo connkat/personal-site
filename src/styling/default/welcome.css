@@ -1,4 +1,4 @@
-.Welcome {
+#Welcome {
 	height: 100vh;
 
 	h1 {
@@ -12,10 +12,15 @@
 	z-index: 100;
 	position: relative;
 	margin: 4vh;
+	display: flex;
+	align-items: center;
 
+	p {
+		padding-left: 2vh;
+	}
 }
 
-.Welcome:after {
+#Welcome:after {
 	content: "";
 	background-image: url("../../assets/inversion.png");
 	width: 100%;
@@ -26,16 +31,25 @@
 	opacity: 0.5;
 }
 
-.logo_desktop {
-	width: 20%;
-	opacity: 1;
-	z-index: 1;
+.welcome_desktop {
+	.logo {
+		width: 20%;
+		opacity: 1;
+		z-index: 1;
+	}
 }
 
-.logo_mobile {
-	width: 100%;
-	opacity: 1;
-	z-index: 1;
+.welcome_mobile {
+	.logo {
+		width: 100%;
+		opacity: 1;
+		z-index: 1;
+	}
+
+	.switch {
+		display: flex;
+		flex-direction: column;
+		align-items:start	}
 }
 
 .animate__animated.animate__fadeInUp {

@@ -15,28 +15,22 @@ export default function Welcome({ isNineties, handle90sToggle }: WelcomeProps) {
 	const isMobileOrTable = useMediaQuery("(max-width: 800px)");
 
 	return (
-		<div className="Welcome">
-			<div className="switch">
-				<NinetiesSwitch
-					isNineties={isNineties}
-					handle90sToggle={handle90sToggle}
-				/>
+		<div id="Welcome">
+			<div className={isMobileOrTable ? "welcome_mobile" : "welcome_desktop"}>
+				<div className="switch">
+					<NinetiesSwitch
+						isNineties={isNineties}
+						handle90sToggle={handle90sToggle}
+					/>
+					<p>What if this was 1999?</p>
+				</div>
+				<div>
+					<img src={Logo} alt="logo" className={"logo"} />
+					<h1 className="animate__animated animate__fadeInUp">
+						Fullstack Development, handled.
+					</h1>
+				</div>
 			</div>
-			{isMobileOrTable ? (
-				<div>
-					<img src={Logo} alt="logo" className="logo_mobile" />
-					<h1 className="animate__animated animate__fadeInUp">
-						Fullstack Development, handled.
-					</h1>
-				</div>
-			) : (
-				<div>
-					<img src={Logo} alt="logo" className="logo_desktop" />
-					<h1 className="animate__animated animate__fadeInUp">
-						Fullstack Development, handled.
-					</h1>
-				</div>
-			)}
 		</div>
 	);
 }
