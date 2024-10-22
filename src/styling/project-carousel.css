@@ -23,4 +23,9 @@
 			max-height: 75%;
 		}
 	}
+	.react-reveal.carousel {
+		img {
+			max-height: 100%;
+		}
+	}
 }

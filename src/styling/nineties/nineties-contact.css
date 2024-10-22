@@ -15,22 +15,11 @@
 }
 
 @media only screen and (max-width: 800px) {
-	.nineties-contact {
+	#NinetiesContact {
 		padding: 0 5vh 5vh 5vh;
-	}
-	textarea {
-		width: 100%;
-	}
 
-	.inputs {
-		margin-right: 0;
-	}
-
-	#form {
-		flex-direction: column;
-	}
-
-	.submit_button {
-		width: 102%;
+		input {
+			width: 100%;
+		}
 	}
 }

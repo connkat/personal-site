@@ -12,8 +12,16 @@
 	display: flex;
 	flex-direction: row;
 	text-align: center;
-	
+
 	img {
 		max-height: 5vh;
+	}
+}
+
+@media only screen and (max-width: 800px) {
+	.single-link {
+		img {
+			max-height: 3vh;
+		}
 	}
 }

@@ -53,71 +53,69 @@ export default function NinetiesContact() {
 		setStateMessage("");
 	};
 	return (
-		<div id="contact" className="NinetiesContact">
-			<div className="nineties-contact content">
-				<form id="form" onSubmit={sendEmail}>
-					<div className="inputs">
-						<div className="field">
-							<h4>Name</h4>
-							<input
-								type="text"
-								name="user_name"
-								value={entryFields.name}
-								onChange={(e) =>
-									setEntryFields({
-										name: e.target.value,
-										email: entryFields.email,
-										message: entryFields.message,
-									})
-								}
-							/>
-						</div>
-						<div className="field">
-							<h4>Email</h4>
-							<input
-								type="email"
-								name="user_email"
-								value={entryFields.email}
-								onChange={(e) =>
-									setEntryFields({
-										name: entryFields.name,
-										email: e.target.value,
-										message: entryFields.message,
-									})
-								}
-							/>
-						</div>
-					</div>
-					<div>
-						<div className="field">
-							<h4>Message</h4>
-							<textarea
-								name="message"
-								value={entryFields.message}
-								onChange={(e) =>
-									setEntryFields({
-										name: entryFields.name,
-										email: entryFields.email,
-										message: e.target.value,
-									})
-								}
-							/>
-						</div>
+		<div id="NinetiesContact" className="nineties-contact content">
+			<form id="form" onSubmit={sendEmail}>
+				<div className="inputs">
+					<div className="field">
+						<h4>Name</h4>
 						<input
-							className="submit_button"
-							type="submit"
-							value="Send"
-							disabled={
-								isSubmitting ||
-								!entryFields.name ||
-								!entryFields.email ||
-								!entryFields.message
+							type="text"
+							name="user_name"
+							value={entryFields.name}
+							onChange={(e) =>
+								setEntryFields({
+									name: e.target.value,
+									email: entryFields.email,
+									message: entryFields.message,
+								})
 							}
 						/>
-						{stateMessage && <p>{stateMessage}</p>}
 					</div>
-				</form>
-			</div>
+					<div className="field">
+						<h4>Email</h4>
+						<input
+							type="email"
+							name="user_email"
+							value={entryFields.email}
+							onChange={(e) =>
+								setEntryFields({
+									name: entryFields.name,
+									email: e.target.value,
+									message: entryFields.message,
+								})
+							}
+						/>
+					</div>
+				</div>
+				<div>
+					<div className="field">
+						<h4>Message</h4>
+						<textarea
+							name="message"
+							value={entryFields.message}
+							onChange={(e) =>
+								setEntryFields({
+									name: entryFields.name,
+									email: entryFields.email,
+									message: e.target.value,
+								})
+							}
+						/>
+					</div>
+					<input
+						className="submit_button"
+						type="submit"
+						value="Send"
+						disabled={
+							isSubmitting ||
+							!entryFields.name ||
+							!entryFields.email ||
+							!entryFields.message
+						}
+					/>
+					{stateMessage && <p>{stateMessage}</p>}
+				</div>
+			</form>
 		</div>
 	);
 }
