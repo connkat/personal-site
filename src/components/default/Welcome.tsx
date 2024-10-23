@@ -30,6 +30,16 @@ export default function Welcome({ isNineties, handle90sToggle }: WelcomeProps) {
 						Fullstack Development, handled.
 					</h1>
 				</div>
+				<div className="definition">
+					<h4>
+						Concatenation: link together in a chain or series. <br />I believe
+						that I concatenate creativity and engineering within my software
+						solutions.
+					</h4>
+					<p className="animate__animated animate__fadeIn">
+						It is also a good pun that uses my name.
+					</p>
+				</div>
 			</div>
 		</div>
 	);

@@ -51,8 +51,24 @@
 		flex-direction: column;
 		align-items: start;
 	}
+	.definition {
+		padding-top: 5vh;
+		padding-left: 5vh;
+
+	}
+	
 }
 
 .animate__animated.animate__fadeInUp {
-	--animate-duration: 5s;
+	--animate-duration: 3s;
+}
+
+.animate__animated.animate__fadeIn {
+	--animate-duration: 7s;
+
+}
+.definition {
+	padding-top: 20vh;
+	padding-left: 10vh;
+	color: rgb(57, 56, 56);
 }
