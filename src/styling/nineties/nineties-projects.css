@@ -6,11 +6,12 @@
 	.carousel {
 		display: flex;
 		justify-content: center;
-		margin:auto;
+		margin: auto;
 		padding-bottom: 2vh;
 
 		.carousel-root {
 			transform: scaleX(+1);
+			-webkit-transform: scaleX(+1);
 			width: 40%;
 		}
 		.react-reveal.carousel {
@@ -18,12 +19,14 @@
 				max-width: 50%;
 				max-height: 20%;
 				transform: scaleX(+1);
+				-webkit-transform: scaleX(+1);
 			}
 		}
 
 		@media only screen and (max-width: 800px) {
 			.carousel-root {
 				transform: scaleX(+1);
+				-webkit-transform: scaleX(+1);
 				width: 100%;
 			}
 		}
