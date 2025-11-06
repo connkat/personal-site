@@ -21,7 +21,7 @@ export default function ProjectCarousel() {
 			window.open("https://pixels-og.netlify.app/");
 		}
 		if (index === 3) {
-			window.open("http://freezerburnwrestlingfederation.com");
+			window.open("https://freezerburn-wrestling-federation.netlify.app/");
 		}
 		if (index === 4) {
 			window.open("https://cf-sprint-calc.netlify.app");
