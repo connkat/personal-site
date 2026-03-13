@@ -1,8 +1,37 @@
-@import url('https://fonts.googleapis.com/css2?family=Raleway:ital,wght@0,100..900;1,100..900&display=swap');
+@import "tailwindcss";
 
-html, body, #root, .App {
-	margin: 0;
-	padding: 0;
-	min-height: 100%;
-	height: 100%;
+@theme {
+	--font-crimson-pro: var(--font-crimson-pro);
+}
+
+/* animate.css overrides */
+.animate__animated.animate__fadeInUp {
+	--animate-duration: 3s;
+}
+.animate__animated.animate__fadeIn {
+	--animate-duration: 7s;
+}
+
+/* react-responsive-carousel */
+.carousel-root {
+	transform: scaleX(-1);
+	-webkit-transform: scaleX(-1);
+}
+.slide {
+	cursor: pointer;
+}
+
+/* Comic Sans for nineties theme */
+@font-face {
+	font-family: "Comic Sans MS";
+	src: url("../fonts/ComicSansMS3.ttf");
+}
+
+/* blink animation for nineties theme */
+@keyframes blink {
+	0%, 50% { opacity: 1; }
+	50.01%, 100% { opacity: 0; }
+}
+.blink {
+	animation: blink 0.75s linear infinite;
 }

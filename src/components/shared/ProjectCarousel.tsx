@@ -1,52 +1,40 @@
+"use client";
+
 import { Carousel } from "react-responsive-carousel";
-
-import "react-responsive-carousel/lib/styles/carousel.min.css";
-import "../../styling/project-carousel.css";
-
 import useMediaQuery from "../../hooks/useMediaQuery";
-
 import { calc, pixels, coffee, fwf, dub } from "../../assets/index";
 
 export default function ProjectCarousel() {
-	const isMobileOrTable = useMediaQuery("(max-width: 800px)");
+	const isMobile = useMediaQuery("(max-width: 800px)");
 
 	function handleClick(index: number): void | undefined {
-		if (index === 0) {
-			window.open("http://coffee-fix.net");
-		}
-		if (index === 1) {
-			window.open("http://theyellowdubmarine.com");
-		}
-		if (index === 2) {
-			window.open("https://pixels-og.netlify.app/");
-		}
-		if (index === 3) {
-			window.open("http://freezerburnwrestlingfederation.com");
-		}
-		if (index === 4) {
-			window.open("https://cf-sprint-calc.netlify.app");
-		}
+		const urls = [
+			"http://coffee-fix.net",
+			"http://theyellowdubmarine.com",
+			"https://pixels-og.netlify.app/",
+			"http://freezerburnwrestlingfederation.com",
+			"https://cf-sprint-calc.netlify.app",
+		];
+		if (urls[index]) window.open(urls[index]);
 	}
 
 	return (
-		<div className="ProjectCarousel">
-			<div className="carousel">
-				<Carousel
-					autoPlay={true}
-					infiniteLoop={true}
-					interval={2000}
-					width={isMobileOrTable ? "70%" : "50%"}
-					showThumbs={false}
-					showStatus={false}
-					onClickItem={(index, item) => handleClick(index)}
-				>
-					<img className="proj-image" src={coffee.src} alt="coffee" />
-					<img className="proj-image" src={dub.src} alt="dub" />
-					<img className="proj-image" src={pixels.src} alt="pixels" />
-					<img className="proj-image" src={fwf.src} alt="fwf" />
-					<img className="proj-image" src={calc.src} alt="calc" />
-				</Carousel>
-			</div>
+		<div className="[&_.carousel-root]:transform-[scaleX(-1)] [&_.slide]:cursor-pointer">
+			<Carousel
+				autoPlay={true}
+				infiniteLoop={true}
+				interval={2000}
+				width={isMobile ? "70%" : "50%"}
+				showThumbs={false}
+				showStatus={false}
+				onClickItem={(index) => handleClick(index)}
+			>
+				<img src={coffee.src} alt="coffee" />
+				<img src={dub.src} alt="dub" />
+				<img src={pixels.src} alt="pixels" />
+				<img src={fwf.src} alt="fwf" />
+				<img src={calc.src} alt="calc" />
+			</Carousel>
 		</div>
 	);
 }

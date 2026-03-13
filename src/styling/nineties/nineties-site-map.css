@@ -1,9 +1,0 @@
-#site-map {
-	display: flex;
-	flex-direction: row;
-	justify-content: space-evenly;
-}
-
-.site-map_mobile {
-	font-size: 10px;
-}

@@ -1,28 +1,24 @@
-import React from "react";
+"use client";
+
 import useMediaQuery from "../../hooks/useMediaQuery";
 
-import "../../styling/nineties/nineties-site-map.css";
-
 export default function NinetiesSiteMap() {
-	const isMobileOrTable = useMediaQuery("(max-width: 800px)");
+	const isMobile = useMediaQuery("(max-width: 800px)");
 
 	return (
-		<div
-			id="site-map"
-			className={isMobileOrTable ? "site-map_mobile" : "site-map_desktop"}
-		>
+		<div id="site-map" className={`flex flex-row justify-evenly ${isMobile ? "text-[10px]" : ""}`}>
 			<h2>
-				<span className="line">|</span>
+				<span className="text-red-500">|</span>
 				<a href=".">Home</a>
-				<span className="line">|</span>
+				<span className="text-red-500">|</span>
 				<a href="#about">About Me</a>
-				<span className="line">|</span>
+				<span className="text-red-500">|</span>
 				<a href="#links">Links</a>
-				<span className="line">|</span>
+				<span className="text-red-500">|</span>
 				<a href="#projects">Projects</a>
-				<span className="line">|</span>
+				<span className="text-red-500">|</span>
 				<a href="#contact">Contact</a>
-				<span className="line">|</span>
+				<span className="text-red-500">|</span>
 			</h2>
 		</div>
 	);

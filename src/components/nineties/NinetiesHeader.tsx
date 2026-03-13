@@ -1,7 +1,6 @@
-import "../../styling/nineties/nineties-header.css";
+"use client";
 
 import useMediaQuery from "../../hooks/useMediaQuery";
-
 import NinetiesSwitch from "../shared/NinetiesSwitch";
 
 type NinetiesProps = {
@@ -10,30 +9,24 @@ type NinetiesProps = {
 };
 
 function NinetiesHeader({ isNineties, handle90sToggle }: NinetiesProps) {
-	const isMobileOrTable = useMediaQuery("(max-width: 800px)");
+	const isMobile = useMediaQuery("(max-width: 800px)");
 
 	return (
 		<div id="NinetiesHeader">
-			<div className={isMobileOrTable ? "header_mobile" : "header_desktop"}>
-				<div className="switch">
-					<NinetiesSwitch
-						isNineties={isNineties}
-						handle90sToggle={handle90sToggle}
-					/>
+			<div className={isMobile
+				? "flex flex-row justify-between items-center py-[2vh] px-[2vh]"
+				: "flex flex-row justify-between items-center py-[4vh]"
+			}>
+				<div className={isMobile ? "flex flex-col pt-[2vh]" : ""}>
+					<NinetiesSwitch isNineties={isNineties} handle90sToggle={handle90sToggle} />
 					<p>Go back to today</p>
 				</div>
-				<h1 className="blink">Welcome to my website!</h1>
-				{isMobileOrTable ? (
-					<span />
-				) : (
-					<img src="https://i.imgur.com/Q	kBkUkC.gif" alt="ie-logo" />
-				)}
+				<h1 className={`blink text-center leading-none ${isMobile ? "text-base" : ""}`}>
+					Welcome to my website!
+				</h1>
+				{isMobile ? <span /> : <img src="https://i.imgur.com/QkBkUkC.gif" alt="ie-logo" />}
 			</div>
-			<img
-				src="https://i.imgur.com/i6hvJjx.gif"
-				alt="rainbow-divider"
-				className="rainbow-divider"
-			/>
+			<img src="https://i.imgur.com/i6hvJjx.gif" alt="rainbow-divider" className="w-full" />
 		</div>
 	);
 }
