@@ -1,9 +1,9 @@
+"use client";
+
 import React, { useState, useEffect } from "react";
 import { fairyDustCursor } from "cursor-effects";
 
-import { Default, Nineties } from "./pages";
-
-import "./styling/app.css";
+import { Default, Nineties } from "./views";
 
 function App() {
 	const [isNineties, setIsNineties] = useState(false);

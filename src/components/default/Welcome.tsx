@@ -1,4 +1,3 @@
-import "animate.css";
 import "../../styling/default/welcome.css";
 import useMediaQuery from "src/hooks/useMediaQuery";
 
@@ -25,7 +24,7 @@ export default function Welcome({ isNineties, handle90sToggle }: WelcomeProps) {
 					<p>What if this was 1999?</p>
 				</div>
 				<div>
-					<img src={Logo} alt="logo" className={"logo"} />
+					<img src={Logo.src} alt="logo" className={"logo"} />
 					<h1 className="animate__animated animate__fadeInUp">
 						Fullstack Development, handled.
 					</h1>

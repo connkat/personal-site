@@ -20,7 +20,7 @@ function NinetiesHeader({ isNineties, handle90sToggle }: NinetiesProps) {
 						isNineties={isNineties}
 						handle90sToggle={handle90sToggle}
 					/>
-					<p>Go back to 2024</p>
+					<p>Go back to today</p>
 				</div>
 				<h1 className="blink">Welcome to my website!</h1>
 				{isMobileOrTable ? (

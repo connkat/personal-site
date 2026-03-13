@@ -40,11 +40,11 @@ export default function ProjectCarousel() {
 					showStatus={false}
 					onClickItem={(index, item) => handleClick(index)}
 				>
-					<img className="proj-image" src={coffee} alt="coffee" />
-					<img className="proj-image" src={dub} alt="dub" />
-					<img className="proj-image" src={pixels} alt="pixels" />
-					<img className="proj-image" src={fwf} alt="fwf" />
-					<img className="proj-image" src={calc} alt="calc" />
+					<img className="proj-image" src={coffee.src} alt="coffee" />
+					<img className="proj-image" src={dub.src} alt="dub" />
+					<img className="proj-image" src={pixels.src} alt="pixels" />
+					<img className="proj-image" src={fwf.src} alt="fwf" />
+					<img className="proj-image" src={calc.src} alt="calc" />
 				</Carousel>
 			</div>
 		</div>
