@@ -43,7 +43,7 @@ export default function Contact() {
 	};
 
 	return (
-		<div id="contact" className="px-[10vw] py-24 min-h-[60vh]">
+		<div id="contact" className="px-[10vw] py-24 min-h-[60vh] flex flex-col items-center">
 			<div className="bg-white px-10 py-10 max-w-xl">
 			<p className="text-xs tracking-widest uppercase text-gray-500 mb-6">Contact</p>
 			<h2 className="text-[clamp(1.5rem,3vw,2.5rem)] font-thin text-gray-800 mb-4">Get in touch</h2>

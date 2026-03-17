@@ -2,8 +2,10 @@
 
 import { motion, useScroll, useTransform } from "framer-motion";
 import { useRef } from "react";
+import useMediaQuery from "src/hooks/useMediaQuery";
 
 export default function Welcome() {
+	const isMobile = useMediaQuery("(max-width: 800px)");
 	const ref = useRef(null);
 	const { scrollYProgress } = useScroll({
 		target: ref,
@@ -11,7 +13,7 @@ export default function Welcome() {
 	});
 
 	const y = useTransform(scrollYProgress, [0, 1], ["30vh", "0vh"]);
-	const opacity = useTransform(scrollYProgress, [0, 0.5], [1, 0]);
+	const opacity = useTransform(scrollYProgress, [0, 0.15, 0.5], isMobile ? [1, 1, 0] : [0, 1, 0]);
 
 	return (
 		<div ref={ref} className="h-[70vh] overflow-hidden">

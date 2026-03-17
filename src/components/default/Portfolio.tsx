@@ -45,6 +45,7 @@ export default function Portfolio() {
 					<a href="http://checkfront.com" target="_blank" rel="noreferrer" className="underline hover:text-gray-500">Checkfront</a>
 					{", + more."}
 				</p>
+				<p>Some fun widgets:</p>
 				<div className="grid grid-cols-3 gap-2">
 					{cells.map((cell, i) =>
 						cell.type === "project" ? (

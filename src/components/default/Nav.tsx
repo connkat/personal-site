@@ -1,5 +1,6 @@
 "use client";
 
+import { useState } from "react";
 import Logo from "../../assets/logo-rectangle.png";
 
 type NavProps = {
@@ -7,30 +8,97 @@ type NavProps = {
 	handle90sToggle: (checked: boolean) => void;
 };
 
+const navLinks = [
+	{ href: "#about", label: "About" },
+	{ href: "#work", label: "Work" },
+	{ href: "#contact", label: "Contact" },
+	{ href: "https://github.com/connkat", label: "GitHub", external: true },
+	{ href: "https://linkedin.com/in/connkat", label: "LinkedIn", external: true },
+];
+
 export default function Nav({ isNineties, handle90sToggle }: NavProps) {
+	const [menuOpen, setMenuOpen] = useState(false);
+
 	return (
-		<nav className="fixed top-0 left-0 right-0 z-50 flex items-center justify-between px-8 bg-white overflow-hidden h-20">
-			<a href="#" className="h-full overflow-hidden flex items-center">
-				<img src={Logo.src} alt="logo" className="h-32 object-cover object-center" />
-			</a>
-			<div className="flex items-center gap-6 text-sm tracking-widest uppercase">
-				<a href="#about" className="text-gray-600 hover:text-gray-900 transition-colors">About</a>
-				<a href="#work" className="text-gray-600 hover:text-gray-900 transition-colors">Work</a>
-				<a href="#contact" className="text-gray-600 hover:text-gray-900 transition-colors">Contact</a>
-				<a href="https://github.com/connkat" target="_blank" rel="noreferrer" className="text-gray-600 hover:text-gray-900 transition-colors">GitHub</a>
-				<a href="https://linkedin.com/in/connkat" target="_blank" rel="noreferrer" className="text-gray-600 hover:text-gray-900 transition-colors">LinkedIn</a>
-				<button
-					onClick={() => handle90sToggle(isNineties)}
-					title="What if this was 1999?"
-					className={`w-9 h-9 rounded-full border-2 text-xs font-bold tracking-tight transition-colors cursor-pointer ${
-						isNineties
-							? "bg-yellow-300 border-yellow-400 text-yellow-900"
-							: "border-gray-400 text-gray-500 hover:border-gray-700 hover:text-gray-700"
-					}`}
-				>
-					1998
-				</button>
-			</div>
-		</nav>
+		<>
+			<nav className="fixed top-0 left-0 right-0 z-50 flex items-center justify-between px-8 bg-white overflow-hidden h-20">
+				<a href="#" className="h-full overflow-hidden flex items-center">
+					<img src={Logo.src} alt="logo" className="h-32 object-cover object-center" />
+				</a>
+
+				{/* Desktop links */}
+				<div className="hidden md:flex items-center gap-6 text-sm tracking-widest uppercase">
+					{navLinks.map(({ href, label, external }) => (
+						<a
+							key={label}
+							href={href}
+							target={external ? "_blank" : undefined}
+							rel={external ? "noreferrer" : undefined}
+							className="text-gray-600 hover:text-gray-900 transition-colors"
+						>
+							{label}
+						</a>
+					))}
+					<NinetiesButton isNineties={isNineties} onToggle={() => handle90sToggle(isNineties)} />
+				</div>
+
+				{/* Mobile right side */}
+				<div className="flex md:hidden items-center gap-4">
+					<NinetiesButton isNineties={isNineties} onToggle={() => handle90sToggle(isNineties)} />
+					<button
+						onClick={() => setMenuOpen((o) => !o)}
+						className="text-gray-600 hover:text-gray-900 transition-colors cursor-pointer"
+						aria-label="Toggle menu"
+					>
+						{menuOpen ? (
+							<svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.5">
+								<line x1="4" y1="4" x2="20" y2="20" />
+								<line x1="20" y1="4" x2="4" y2="20" />
+							</svg>
+						) : (
+							<svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.5">
+								<line x1="3" y1="7" x2="21" y2="7" />
+								<line x1="3" y1="12" x2="21" y2="12" />
+								<line x1="3" y1="17" x2="21" y2="17" />
+							</svg>
+						)}
+					</button>
+				</div>
+			</nav>
+
+			{/* Mobile dropdown */}
+			{menuOpen && (
+				<div className="fixed top-20 left-0 right-0 z-40 bg-white flex flex-col text-sm tracking-widest uppercase">
+					{navLinks.map(({ href, label, external }) => (
+						<a
+							key={label}
+							href={href}
+							target={external ? "_blank" : undefined}
+							rel={external ? "noreferrer" : undefined}
+							className="text-gray-600 hover:text-gray-900 transition-colors px-8 py-4 border-b border-gray-100"
+							onClick={() => setMenuOpen(false)}
+						>
+							{label}
+						</a>
+					))}
+				</div>
+			)}
+		</>
+	);
+}
+
+function NinetiesButton({ isNineties, onToggle }: { isNineties: boolean; onToggle: () => void }) {
+	return (
+		<button
+			onClick={onToggle}
+			title="What if this was 1999?"
+			className={`w-9 h-9 rounded-full border-2 text-xs font-bold tracking-tight transition-colors cursor-pointer ${
+				isNineties
+					? "bg-yellow-300 border-yellow-400 text-yellow-900"
+					: "border-gray-400 text-gray-500 hover:border-gray-700 hover:text-gray-700"
+			}`}
+		>
+			1998
+		</button>
 	);
 }
