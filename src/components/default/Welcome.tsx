@@ -18,7 +18,7 @@ export default function Welcome() {
 	return (
 		<div ref={ref} className="h-[70vh] overflow-hidden">
 			<motion.div className="absolute top-[20%] w-full" style={{ y, opacity }}>
-				<h1 className="text-right pr-[5%] leading-none font-thin text-[clamp(2rem,6vw,5rem)] tracking-tight text-gray-700 drop-shadow-lg">
+				<h1 className="text-right pr-[5%] leading-none font-thin md:text-[clamp(2rem,6vw,5rem)] tracking-tight text-gray-700 drop-shadow-lg" style={{ fontSize: "clamp(3.3rem, 4.5vw, 5rem)" }}>
 					Fullstack Development, handled.
 				</h1>
 			</motion.div>
