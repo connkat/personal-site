@@ -2,9 +2,10 @@
 
 type Props = {
 	onContactClick?: () => void;
+	onTodayClick?: () => void;
 };
 
-export default function NinetiesSiteMap({ onContactClick }: Props) {
+export default function NinetiesSiteMap({ onContactClick, onTodayClick }: Props) {
 	return (
 		<div id="site-map" className="flex justify-center py-2">
 			<p className="whitespace-nowrap text-[clamp(20px,2.2vw,14px)]">
@@ -13,7 +14,7 @@ export default function NinetiesSiteMap({ onContactClick }: Props) {
 				<span className="text-red-500">|</span>
 				<a href="#about">About Me</a>
 				<span className="text-red-500">|</span>
-				<a href="#links">Links</a>
+				<a href="#" onClick={(e) => { e.preventDefault(); onTodayClick?.(); }}>Today</a>
 				<span className="text-red-500">|</span>
 				<a href="#projects">Projects</a>
 				<span className="text-red-500">|</span>

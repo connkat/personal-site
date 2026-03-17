@@ -12,8 +12,9 @@ export default function NinetiesAbout() {
 					<div className="flex">
 						<p>I am passionate about web design!</p>
 						<p className="text-[8px] pt-[1vh]">~*just kidding*~</p>
+						<p>But I do have an odd amount of 1998-style projects.</p>
 					</div>
-					<div className="flex">
+					<div className="flex pt-4">
 						<p>
 							While I am not a designer, I am a skilled fullstack* developer, with substantial
 							experience in both back and front end technologies and engineering leadership.
@@ -40,7 +41,7 @@ export default function NinetiesAbout() {
 					</button>
 				</div>
 			</div>
-		<NinetiesContact isOpen={contactOpen} setIsOpen={setContactOpen} />
+			<NinetiesContact isOpen={contactOpen} setIsOpen={setContactOpen} />
 		</div>
 	);
 }

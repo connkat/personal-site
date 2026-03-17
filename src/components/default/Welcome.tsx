@@ -13,7 +13,7 @@ export default function Welcome() {
 	});
 
 	const y = useTransform(scrollYProgress, [0, 1], ["30vh", "0vh"]);
-	const opacity = useTransform(scrollYProgress, [0, 0.15, 0.5], isMobile ? [1, 1, 0] : [0, 1, 0]);
+	const opacity = useTransform(scrollYProgress, [0, 0.15, 0.5], isMobile ? [1, 1, 0] : [0.2, 1, 0]);
 
 	return (
 		<div ref={ref} className="h-[70vh] overflow-hidden">

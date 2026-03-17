@@ -32,7 +32,7 @@ export default function Nineties({ isNineties, handle90sToggle }: NinetiesProps)
 					<NinetiesLinks />
 					<h2>Projects</h2>
 					<NinetiesProjects />
-					<NinetiesSiteMap />
+					<NinetiesSiteMap onTodayClick={() => handle90sToggle(false)} />
 				</div>
 			</div>
 		</>
