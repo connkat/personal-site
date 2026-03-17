@@ -1,9 +1,6 @@
 "use client";
 
-import useMediaQuery from "src/hooks/useMediaQuery";
-
 export default function NinetiesAbout() {
-  const isMobile = useMediaQuery("(max-width: 800px)");
 
   return (
     <div className="px-[5vh] text-base">

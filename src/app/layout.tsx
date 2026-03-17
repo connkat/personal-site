@@ -1,5 +1,7 @@
+import React from "react";
 import type { Metadata } from "next";
 import { Crimson_Pro } from "next/font/google";
+import { URL } from "node:url";
 import "../styling/app.css";
 
 const crimsonPro = Crimson_Pro({
