@@ -1,69 +1,25 @@
-import "../../styling/nineties/nineties-links.css";
-
 export default function NinetiesLinks() {
+	const linkClass = "flex flex-row text-center";
+	const imgClass = "max-h-[5vh]";
+
+	const links = [
+		{ href: "/KConnolly.pdf", src: "https://win98icons.alexmeub.com/icons/png/write_wordpad-1.png", label: "Resume", download: true },
+		{ href: "https://linkedin.com/in/connkat", src: "https://win98icons.alexmeub.com/icons/png/world_phonereceiver.png", label: "LinkedIn" },
+		{ href: "https://www.github.com/connkat", src: "https://win98icons.alexmeub.com/icons/png/computer_explorer-4.png", label: "Github" },
+		{ href: "https://connkat.medium.com/", src: "https://win98icons.alexmeub.com/icons/png/printer-0.png", label: "Medium" },
+	];
+
 	return (
-		<div id="links">
-			<div className="image-links content">
-				<div className="single-link">
-					<a
-						href="https://github.com/connkat/Resume/blob/master/KConnolly.pdf"
-						target="_blank"
-						rel="noreferrer"
-					>
-						<img
-							src="https://win98icons.alexmeub.com/icons/png/write_wordpad-1.png"
-							alt="resume"
-							className="icon-tiny"
-						/>
-						<p>Resume</p>
-					</a>
-				</div>
-				<div className="single-link">
-					<a
-						href="https://linkedin.com/in/connkat"
-						target="_blank"
-						rel="noreferrer"
-					>
-						<img
-							src={
-								"https://win98icons.alexmeub.com/icons/png/world_phonereceiver.png"
-							}
-							alt="linkedIn"
-							className="icon-tiny-linkedin"
-						/>
-						<p>LinkedIn</p>
-					</a>
-				</div>
-				<div className="single-link">
-					<a
-						href="https://www.github.com/connkat"
-						target="_blank"
-						rel="noreferrer"
-					>
-						<img
-							src={
-								"https://win98icons.alexmeub.com/icons/png/computer_explorer-4.png"
-							}
-							alt="github"
-							className="icon-tiny"
-						/>
-						<p>Github</p>
-					</a>
-				</div>
-				<div className="single-link">
-					<a
-						href="https://connkat.medium.com/"
-						target="_blank"
-						rel="noreferrer"
-					>
-						<img
-							src={"https://win98icons.alexmeub.com/icons/png/printer-0.png"}
-							alt="Medium"
-							className="icon-tiny"
-						/>
-						<p>Medium</p>
-					</a>
-				</div>
+		<div id="links" className="px-[5vh]">
+			<div className="flex flex-row justify-evenly">
+				{links.map(({ href, src, label, download }) => (
+					<div key={label} className={linkClass}>
+						<a href={href} target={download ? undefined : "_blank"} rel={download ? undefined : "noreferrer"} download={download || undefined}>
+							<img src={src} alt={label} className={imgClass} />
+							<p>{label}</p>
+						</a>
+					</div>
+				))}
 			</div>
 		</div>
 	);
