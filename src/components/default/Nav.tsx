@@ -1,6 +1,8 @@
 "use client";
 
 import { useState } from "react";
+import MenuIcon from "@mui/icons-material/Menu";
+import CloseIcon from "@mui/icons-material/Close";
 import Logo from "../../assets/logo-rectangle.png";
 
 type NavProps = {
@@ -14,6 +16,8 @@ const navLinks = [
 	{ href: "#contact", label: "Contact" },
 	{ href: "https://github.com/connkat", label: "GitHub", external: true },
 	{ href: "https://linkedin.com/in/connkat", label: "LinkedIn", external: true },
+	{ href: "https://medium.com/@connkat", label: "Medium", external: true },
+
 ];
 
 export default function Nav({ isNineties, handle90sToggle }: NavProps) {
@@ -21,7 +25,7 @@ export default function Nav({ isNineties, handle90sToggle }: NavProps) {
 
 	return (
 		<>
-			<nav className="fixed top-0 left-0 right-0 z-50 flex items-center justify-between px-8 bg-white overflow-hidden h-20">
+			<nav className="fixed top-0 left-0 right-0 z-50 flex items-center justify-between pl-0 pr-1 bg-white overflow-hidden h-20">
 				<a href="#" className="h-full overflow-hidden flex items-center">
 					<img src={Logo.src} alt="logo" className="h-32 object-cover object-center" />
 				</a>
@@ -43,25 +47,18 @@ export default function Nav({ isNineties, handle90sToggle }: NavProps) {
 				</div>
 
 				{/* Mobile right side */}
-				<div className="flex md:hidden items-center gap-4">
+				<div className="flex md:hidden items-center gap-1">
 					<NinetiesButton isNineties={isNineties} onToggle={() => handle90sToggle(isNineties)} />
 					<button
 						onClick={() => setMenuOpen((o) => !o)}
 						className="text-gray-600 hover:text-gray-900 transition-colors cursor-pointer"
 						aria-label="Toggle menu"
+						style={{ border: "none", background: "none", padding: 0, boxShadow: "none" }}
 					>
-						{menuOpen ? (
-							<svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.5">
-								<line x1="4" y1="4" x2="20" y2="20" />
-								<line x1="20" y1="4" x2="4" y2="20" />
-							</svg>
-						) : (
-							<svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.5">
-								<line x1="3" y1="7" x2="21" y2="7" />
-								<line x1="3" y1="12" x2="21" y2="12" />
-								<line x1="3" y1="17" x2="21" y2="17" />
-							</svg>
-						)}
+						{menuOpen
+						? <CloseIcon style={{ fontSize: 24, color: "#4b5563" }} />
+						: <MenuIcon style={{ fontSize: 24, color: "#4b5563" }} />
+					}
 					</button>
 				</div>
 			</nav>

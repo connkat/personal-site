@@ -1,13 +1,9 @@
 "use client";
 
-import useMediaQuery from "../../hooks/useMediaQuery";
-
 export default function NinetiesSiteMap() {
-	const isMobile = useMediaQuery("(max-width: 800px)");
-
 	return (
-		<div id="site-map" className={`flex flex-row justify-evenly ${isMobile ? "text-[10px]" : ""}`}>
-			<h2>
+		<div id="site-map" className="flex justify-center py-2">
+			<p className="whitespace-nowrap text-[clamp(20px,2.2vw,14px)]">
 				<span className="text-red-500">|</span>
 				<a href=".">Home</a>
 				<span className="text-red-500">|</span>
@@ -19,7 +15,7 @@ export default function NinetiesSiteMap() {
 				<span className="text-red-500">|</span>
 				<a href="#contact">Contact</a>
 				<span className="text-red-500">|</span>
-			</h2>
+			</p>
 		</div>
 	);
 }

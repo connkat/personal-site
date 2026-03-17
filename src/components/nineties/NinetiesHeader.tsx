@@ -10,7 +10,7 @@ function NinetiesHeader({ isNineties, handle90sToggle }: NinetiesProps) {
 		<div id="NinetiesHeader">
 			<div className="flex flex-row justify-between items-center py-[2vh] px-[2vh]">
 				<img src="https://i.imgur.com/QkBkUkC.gif" alt="ie-logo" />
-				<h1 className="blink text-center leading-none">Welcome to my website!</h1>
+				<h4 className="blink text-center leading-none">Welcome to my website!</h4>
 				<button
 					onClick={() => handle90sToggle(isNineties)}
 					title="Go back to today"
@@ -20,7 +20,7 @@ function NinetiesHeader({ isNineties, handle90sToggle }: NinetiesProps) {
 							: "border-gray-400 text-gray-500 hover:border-gray-700 hover:text-gray-700"
 					}`}
 				>
-					today
+					back to today
 				</button>
 			</div>
 			<img src="https://i.imgur.com/i6hvJjx.gif" alt="rainbow-divider" className="w-full" />

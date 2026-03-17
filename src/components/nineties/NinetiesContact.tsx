@@ -3,8 +3,8 @@
 import { FormEvent, useState } from "react";
 import emailjs from "@emailjs/browser";
 
-const inputClass = "mb-[1vh] w-[40vh] h-[4vh] border border-black";
-const textareaClass = "mb-[1vh] h-[20vh] border border-black w-[40vh]";
+const inputClass = "mb-[1vh] w-[40vh] h-[4vh] border border-black bg-white text-black";
+const textareaClass = "mb-[1vh] h-[20vh] border border-black w-[40vh] bg-white text-black";
 
 export default function NinetiesContact() {
 	const [isSubmitting, setIsSubmitting] = useState(false);
