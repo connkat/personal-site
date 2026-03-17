@@ -8,6 +8,7 @@ const crimsonPro = Crimson_Pro({
 });
 
 export const metadata: Metadata = {
+	metadataBase: new URL("https://connkat.com"),
 	title: "Katherine Connolly",
 	description: "Connkat: Software Development Handled",
 	openGraph: {

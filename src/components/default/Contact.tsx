@@ -3,8 +3,8 @@
 import { FormEvent, useState } from "react";
 import emailjs from "@emailjs/browser";
 
-const inputClass = "rounded-md mb-[1vh] w-[40vh] h-[4vh] border border-black";
-const textareaClass = "mb-[1vh] h-[20vh] rounded-md border border-black w-[40vh]";
+const inputClass = "mb-3 w-full h-10 border-b border-gray-400 bg-transparent focus:outline-none focus:border-gray-800 text-gray-800 transition-colors";
+const textareaClass = "mb-3 h-32 w-full border-b border-gray-400 bg-transparent focus:outline-none focus:border-gray-800 text-gray-800 transition-colors resize-none";
 
 export default function Contact() {
 	const [isSubmitting, setIsSubmitting] = useState(false);
@@ -43,54 +43,47 @@ export default function Contact() {
 	};
 
 	return (
-		<div className="min-h-[60vh] flex flex-col items-center max-sm:min-h-[90vh]">
-			<h1 className="text-center pt-[2%] font-thin">Get in touch</h1>
-			<p className="px-[5vh]">
-				I can't come to the phone right now, but leave a name and detailed
-				message and I'll get back to you as soon as possible!
+		<div id="contact" className="px-[10vw] py-24 min-h-[60vh]">
+			<div className="bg-white px-10 py-10 max-w-xl">
+			<p className="text-xs tracking-widest uppercase text-gray-500 mb-6">Contact</p>
+			<h2 className="text-[clamp(1.5rem,3vw,2.5rem)] font-thin text-gray-800 mb-4">Get in touch</h2>
+			<p className="text-gray-700 mb-10 max-w-md leading-relaxed">
+				I can&apos;t come to the phone right now, but leave a name and message and I&apos;ll get back to you.
 			</p>
-			<form id="form" onSubmit={sendEmail} className="flex flex-row max-sm:flex-col">
-				<div className="flex flex-col mr-[5vh] max-sm:mr-0">
-					<div>
-						<h4>Name</h4>
-						<input
-							type="text"
-							name="user_name"
-							value={entryFields.name}
-							className={inputClass}
-							onChange={(e) => setEntryFields({ ...entryFields, name: e.target.value })}
-						/>
-					</div>
-					<div>
-						<h4>Email</h4>
-						<input
-							type="email"
-							name="user_email"
-							value={entryFields.email}
-							className={inputClass}
-							onChange={(e) => setEntryFields({ ...entryFields, email: e.target.value })}
-						/>
-					</div>
-				</div>
-				<div>
-					<div>
-						<h4>Message</h4>
-						<textarea
-							name="message"
-							value={entryFields.message}
-							className={textareaClass + " max-sm:w-full"}
-							onChange={(e) => setEntryFields({ ...entryFields, message: e.target.value })}
-						/>
-					</div>
-					<input
-						type="submit"
-						value="Send"
-						className="w-[41vh] max-sm:w-full cursor-pointer"
-						disabled={isSubmitting || !entryFields.name || !entryFields.email || !entryFields.message}
-					/>
-					{stateMessage && <p>{stateMessage}</p>}
-				</div>
+			<form id="form" onSubmit={sendEmail} className="max-w-md flex flex-col">
+				<label className="text-xs tracking-widest uppercase text-gray-500 mb-1">Name</label>
+				<input
+					type="text"
+					name="user_name"
+					value={entryFields.name}
+					className={inputClass}
+					onChange={(e) => setEntryFields({ ...entryFields, name: e.target.value })}
+				/>
+				<label className="text-xs tracking-widest uppercase text-gray-500 mb-1 mt-4">Email</label>
+				<input
+					type="email"
+					name="user_email"
+					value={entryFields.email}
+					className={inputClass}
+					onChange={(e) => setEntryFields({ ...entryFields, email: e.target.value })}
+				/>
+				<label className="text-xs tracking-widest uppercase text-gray-500 mb-1 mt-4">Message</label>
+				<textarea
+					name="message"
+					value={entryFields.message}
+					className={textareaClass}
+					onChange={(e) => setEntryFields({ ...entryFields, message: e.target.value })}
+				/>
+				<button
+					type="submit"
+					className="mt-6 self-start text-sm tracking-widest uppercase text-gray-600 hover:text-gray-900 transition-colors disabled:opacity-30 cursor-pointer"
+					disabled={isSubmitting || !entryFields.name || !entryFields.email || !entryFields.message}
+				>
+					Send ↗
+				</button>
+				{stateMessage && <p className="mt-4 text-sm text-gray-600">{stateMessage}</p>}
 			</form>
+			</div>
 		</div>
 	);
 }

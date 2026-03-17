@@ -1,40 +1,35 @@
 "use client";
 
-import { Carousel } from "react-responsive-carousel";
-import useMediaQuery from "../../hooks/useMediaQuery";
+import useEmblaCarousel from "embla-carousel-react";
+import Autoplay from "embla-carousel-autoplay";
 import { calc, pixels, coffee, fwf, dub } from "../../assets/index";
 
-export default function ProjectCarousel() {
-	const isMobile = useMediaQuery("(max-width: 800px)");
+const slides = [
+	{ src: coffee, alt: "coffee", url: "http://coffee-fix.net" },
+	{ src: dub, alt: "dub", url: "http://theyellowdubmarine.com" },
+	{ src: pixels, alt: "pixels", url: "https://pixels-og.netlify.app/" },
+	{ src: fwf, alt: "fwf", url: "http://freezerburnwrestlingfederation.com" },
+	{ src: calc, alt: "calc", url: "https://cf-sprint-calc.netlify.app" },
+];
 
-	function handleClick(index: number): void | undefined {
-		const urls = [
-			"http://coffee-fix.net",
-			"http://theyellowdubmarine.com",
-			"https://pixels-og.netlify.app/",
-			"http://freezerburnwrestlingfederation.com",
-			"https://cf-sprint-calc.netlify.app",
-		];
-		if (urls[index]) window.open(urls[index]);
-	}
+export default function ProjectCarousel() {
+	const [emblaRef] = useEmblaCarousel({ loop: true }, [
+		Autoplay({ delay: 2000, stopOnInteraction: false }),
+	]);
 
 	return (
-		<div className="[&_.carousel-root]:transform-[scaleX(-1)] [&_.slide]:cursor-pointer">
-			<Carousel
-				autoPlay={true}
-				infiniteLoop={true}
-				interval={2000}
-				width={isMobile ? "70%" : "50%"}
-				showThumbs={false}
-				showStatus={false}
-				onClickItem={(index) => handleClick(index)}
-			>
-				<img src={coffee.src} alt="coffee" />
-				<img src={dub.src} alt="dub" />
-				<img src={pixels.src} alt="pixels" />
-				<img src={fwf.src} alt="fwf" />
-				<img src={calc.src} alt="calc" />
-			</Carousel>
+		<div className="overflow-hidden w-1/2 mx-auto max-sm:w-[70%]" ref={emblaRef}>
+			<div className="flex">
+				{slides.map(({ src, alt, url }) => (
+					<div
+						key={alt}
+						className="flex-[0_0_100%] cursor-pointer"
+						onClick={() => window.open(url)}
+					>
+						<img src={src.src} alt={alt} className="w-full object-cover" />
+					</div>
+				))}
+			</div>
 		</div>
 	);
 }

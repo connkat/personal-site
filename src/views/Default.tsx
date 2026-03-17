@@ -1,4 +1,4 @@
-import { Welcome, Portfolio, Contact } from "../components/default";
+import { Welcome, Portfolio, Secondary, Contact, Nav } from "../components/default";
 
 type DefaultProps = {
 	isNineties: boolean;
@@ -10,7 +10,9 @@ export default function Default({ isNineties, handle90sToggle }: DefaultProps) {
 		<>
 			<div className="fixed inset-0 -z-10 bg-[url('/inversion.jpg')] bg-cover bg-center" />
 			<div className="min-h-screen font-crimson-pro">
-				<Welcome isNineties={isNineties} handle90sToggle={handle90sToggle} />
+				<Nav isNineties={isNineties} handle90sToggle={handle90sToggle} />
+				<Welcome />
+				<Secondary />
 				<Portfolio />
 				<Contact />
 			</div>
