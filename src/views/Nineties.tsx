@@ -6,7 +6,6 @@ import {
 	NinetiesHeader,
 	NinetiesLinks,
 	NinetiesProjects,
-	NinetiesContact,
 	NinetiesSiteMap,
 } from "../components/nineties";
 
@@ -30,12 +29,9 @@ export default function Nineties({ isNineties, handle90sToggle }: NinetiesProps)
 					<NinetiesHeader isNineties={isNineties} handle90sToggle={handle90sToggle} />
 					<h2>About Me:</h2>
 					<NinetiesAbout />
-					<h2>Links:</h2>
 					<NinetiesLinks />
 					<h2>Projects</h2>
 					<NinetiesProjects />
-					<h2>Contact</h2>
-					<NinetiesContact />
 					<NinetiesSiteMap />
 				</div>
 			</div>

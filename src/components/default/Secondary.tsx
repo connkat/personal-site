@@ -16,7 +16,7 @@ export default function Secondary() {
 	return (
 		<div id="about" ref={ref} className="flex items-center overflow-x-clip px-[10vw] py-32">
 			<motion.div
-				className="max-w-2xl bg-white px-10 py-10 ml-auto mr-[10vw]"
+				className="max-w-2xl bg-white px-10 py-10 ml-auto mr-[10vw] rounded-lg"
 				style={{ x, opacity }}
 			>
 				<p className="text-xs tracking-widest uppercase text-gray-500 mb-6">About</p>

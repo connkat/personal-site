@@ -1,12 +1,18 @@
 "use client";
 
+import "98.css";
 import { FormEvent, useState } from "react";
 import emailjs from "@emailjs/browser";
 
-const inputClass = "mb-[1vh] w-[40vh] h-[4vh] border border-black bg-white text-black";
-const textareaClass = "mb-[1vh] h-[20vh] border border-black w-[40vh] bg-white text-black";
+const inputClass = "mb-[1vh] w-full h-[4vh] border border-black bg-white text-black";
+const textareaClass = "mb-[1vh] h-[20vh] border border-black w-full bg-white text-black";
 
-export default function NinetiesContact() {
+type Props = {
+	isOpen: boolean;
+	setIsOpen: (open: boolean) => void;
+};
+
+export default function NinetiesContact({ isOpen, setIsOpen }: Props) {
 	const [isSubmitting, setIsSubmitting] = useState(false);
 	const [stateMessage, setStateMessage] = useState("");
 	const [entryFields, setEntryFields] = useState({ name: "", email: "", message: "" });
@@ -23,7 +29,7 @@ export default function NinetiesContact() {
 			.sendForm(
 				process.env.REACT_APP_SERVICE_ID || "",
 				process.env.REACT_APP_TEMPLATE_ID || "",
-				"#form",
+				"#nineties-form",
 				process.env.REACT_APP_PUBLIC_KEY || ""
 			)
 			.then(
@@ -43,49 +49,122 @@ export default function NinetiesContact() {
 	};
 
 	return (
-		<div id="NinetiesContact" className="pl-[5vh] max-sm:px-[5vh] max-sm:pb-[5vh]">
-			<form id="form" onSubmit={sendEmail}>
-				<div className="flex flex-col mr-[5vh]">
-					<div>
-						<h4>Name</h4>
-						<input
-							type="text"
-							name="user_name"
-							value={entryFields.name}
-							className={inputClass + " max-sm:w-full"}
-							onChange={(e) => setEntryFields({ ...entryFields, name: e.target.value })}
-						/>
-					</div>
-					<div>
-						<h4>Email</h4>
-						<input
-							type="email"
-							name="user_email"
-							value={entryFields.email}
-							className={inputClass + " max-sm:w-full"}
-							onChange={(e) => setEntryFields({ ...entryFields, email: e.target.value })}
-						/>
+		<div id="NinetiesContact">
+			{isOpen && (
+				<div
+					onClick={() => setIsOpen(false)}
+					style={{
+						position: "fixed",
+						inset: 0,
+						zIndex: 9999,
+						display: "flex",
+						alignItems: "center",
+						justifyContent: "center",
+						background: "rgba(0,0,0,0.3)",
+					}}
+				>
+					{/* Popup ad window */}
+					<div
+						className="window"
+						onClick={(e) => e.stopPropagation()}
+						style={{
+							width: "360px",
+							fontFamily: "Comic Sans MS, cursive",
+							border: "3px solid #000",
+							boxShadow: "6px 6px 0 #000",
+						}}
+					>
+						<div
+							className="title-bar"
+							style={{ background: "linear-gradient(90deg, #000080, #1084d0)" }}
+						>
+							<div className="title-bar-text">
+								🎉 YOU HAVE BEEN SELECTED!! 🎉
+							</div>
+							<div className="title-bar-controls">
+								<button aria-label="Minimize" />
+								<button aria-label="Maximize" />
+								<button aria-label="Close" onClick={() => setIsOpen(false)} />
+							</div>
+						</div>
+						<div className="window-body" style={{ padding: "12px" }}>
+							<p
+								style={{
+									fontFamily: "Comic Sans MS, cursive",
+									fontWeight: "bold",
+									fontSize: "13px",
+									color: "#cc0000",
+									textAlign: "center",
+									margin: "0 0 10px",
+								}}
+							>
+								⚡ SEND A MESSAGE TO KATHERINE CONNOLLY ⚡
+							</p>
+							<form id="nineties-form" onSubmit={sendEmail}>
+								<div style={{ marginBottom: "6px" }}>
+									<label style={{ display: "block", fontWeight: "bold", fontSize: "12px" }}>
+										Name:
+									</label>
+									<input
+										type="text"
+										name="user_name"
+										value={entryFields.name}
+										className={inputClass}
+										onChange={(e) => setEntryFields({ ...entryFields, name: e.target.value })}
+									/>
+								</div>
+								<div style={{ marginBottom: "6px" }}>
+									<label style={{ display: "block", fontWeight: "bold", fontSize: "12px" }}>
+										Email:
+									</label>
+									<input
+										type="email"
+										name="user_email"
+										value={entryFields.email}
+										className={inputClass}
+										onChange={(e) => setEntryFields({ ...entryFields, email: e.target.value })}
+									/>
+								</div>
+								<div style={{ marginBottom: "8px" }}>
+									<label style={{ display: "block", fontWeight: "bold", fontSize: "12px" }}>
+										Message:
+									</label>
+									<textarea
+										name="message"
+										value={entryFields.message}
+										className={textareaClass}
+										onChange={(e) =>
+											setEntryFields({ ...entryFields, message: e.target.value })
+										}
+									/>
+								</div>
+								{stateMessage && (
+									<p style={{ fontSize: "12px", color: "#000080", marginBottom: "6px" }}>
+										{stateMessage}
+									</p>
+								)}
+								<div style={{ display: "flex", gap: "8px", justifyContent: "flex-end" }}>
+									<button type="button" onClick={() => setIsOpen(false)}>
+										Cancel
+									</button>
+									<button
+										type="submit"
+										disabled={
+											isSubmitting ||
+											!entryFields.name ||
+											!entryFields.email ||
+											!entryFields.message
+										}
+										style={{ fontWeight: "bold" }}
+									>
+										SEND IT! 🚀
+									</button>
+								</div>
+							</form>
+						</div>
 					</div>
 				</div>
-				<div>
-					<h4>Message</h4>
-					<textarea
-						name="message"
-						value={entryFields.message}
-						className={textareaClass + " max-sm:w-full"}
-						onChange={(e) => setEntryFields({ ...entryFields, message: e.target.value })}
-					/>
-					<input
-						type="submit"
-						value="Send"
-						className="text-yellow-300 cursor-pointer"
-						disabled={
-							isSubmitting || !entryFields.name || !entryFields.email || !entryFields.message
-						}
-					/>
-					{stateMessage && <p>{stateMessage}</p>}
-				</div>
-			</form>
+			)}
 		</div>
 	);
 }

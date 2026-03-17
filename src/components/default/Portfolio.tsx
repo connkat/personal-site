@@ -79,7 +79,7 @@ export default function Portfolio() {
 
 	return (
 		<div id="work" ref={ref} className="px-[10vw] py-24 overflow-x-clip">
-			<motion.div className="bg-white px-10 py-10 max-w-2xl" style={{ x, opacity }}>
+			<motion.div className="bg-white px-10 py-10 max-w-2xl rounded-lg" style={{ x, opacity }}>
 				<div className="flex items-center justify-between mb-8">
 					<p className="text-xs tracking-widest uppercase text-gray-500">Work</p>
 					<a
@@ -140,16 +140,16 @@ export default function Portfolio() {
 								href={cell.url}
 								target="_blank"
 								rel="noreferrer"
-								className={`${cell.span} h-24 bg-gray-50 border border-gray-100 relative overflow-hidden flex items-end p-3 group hover:bg-gray-100 transition-colors`}
+								className={`${cell.span} h-24 bg-gray-50 border border-gray-100 rounded relative overflow-hidden flex items-end p-3 group hover:bg-gray-100 transition-colors`}
 							>
 								{cell.image && (
 									<img
 										src={cell.image.src}
 										alt={cell.name}
-										className={`absolute inset-0 w-full h-full object-cover ${cell.imagePos} opacity-0 group-hover:opacity-90 transition-opacity duration-300`}
+										className={`absolute inset-0 w-full h-full object-cover ${cell.imagePos} opacity-0 group-hover:opacity-90 md:opacity-0 max-md:opacity-90 transition-opacity duration-300`}
 									/>
 								)}
-								<span className="relative z-10 text-gray-800 text-sm font-thin leading-tight group-hover:text-white transition-colors">
+								<span className="relative z-10 text-gray-800 text-sm font-thin leading-tight group-hover:text-white max-md:text-white transition-colors">
 									{cell.name}
 								</span>
 							</a>

@@ -1,6 +1,10 @@
 "use client";
 
-export default function NinetiesSiteMap() {
+type Props = {
+	onContactClick?: () => void;
+};
+
+export default function NinetiesSiteMap({ onContactClick }: Props) {
 	return (
 		<div id="site-map" className="flex justify-center py-2">
 			<p className="whitespace-nowrap text-[clamp(20px,2.2vw,14px)]">
@@ -13,7 +17,7 @@ export default function NinetiesSiteMap() {
 				<span className="text-red-500">|</span>
 				<a href="#projects">Projects</a>
 				<span className="text-red-500">|</span>
-				<a href="#contact">Contact</a>
+				<a href="#NinetiesContact" onClick={onContactClick}>Contact</a>
 				<span className="text-red-500">|</span>
 			</p>
 		</div>
