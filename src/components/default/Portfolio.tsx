@@ -5,15 +5,57 @@ import { motion, useScroll, useTransform } from "framer-motion";
 import { resume, coffee, dub, pixels, fwf, calc, nate } from "../../assets/index";
 
 const cells = [
-	{ type: "project", name: "Coffee Fix", url: "http://coffee-fix.net", span: "col-span-2", image: coffee, imagePos: "object-center" },
+	{
+		type: "project",
+		name: "Coffee Fix",
+		url: "http://coffee-fix.net",
+		span: "col-span-2",
+		image: coffee,
+		imagePos: "object-center",
+	},
 	{ type: "empty", span: "col-span-1" },
 	{ type: "empty", span: "col-span-1" },
-	{ type: "project", name: "The Yellow Dubmarine", url: "http://theyellowdubmarine.com", span: "col-span-2", image: dub, imagePos: "object-[center_8%]" },
-	{ type: "project", name: "Pixels & Pints", url: "https://pixels-og.netlify.app/", span: "col-span-1", image: pixels, imagePos: "object-center" },
+	{
+		type: "project",
+		name: "The Yellow Dubmarine",
+		url: "http://theyellowdubmarine.com",
+		span: "col-span-2",
+		image: dub,
+		imagePos: "object-[center_8%]",
+	},
+	{
+		type: "project",
+		name: "Pixels & Pints",
+		url: "https://pixels-og.netlify.app/",
+		span: "col-span-1",
+		image: pixels,
+		imagePos: "object-center",
+	},
 	{ type: "empty", span: "col-span-1" },
-	{ type: "project", name: "Freezer Burn Wrestling Federation", url: "http://freezerburnwrestlingfederation.com", span: "col-span-1", image: fwf, imagePos: "object-center" },
-	{ type: "project", name: "Nathan Iles", url: "https://nathaniles.com/", span: "col-span-2", image: nate, imagePos: "object-center" },
-	{ type: "project", name: "Sprint Calculator", url: "https://cf-sprint-calc.netlify.app", span: "col-span-1", image: calc, imagePos: "object-center" },
+	{
+		type: "project",
+		name: "Freezer Burn Wrestling Federation",
+		url: "http://freezerburnwrestlingfederation.com",
+		span: "col-span-1",
+		image: fwf,
+		imagePos: "object-center",
+	},
+	{
+		type: "project",
+		name: "Nathan Iles",
+		url: "https://nathaniles.com/",
+		span: "col-span-2",
+		image: nate,
+		imagePos: "object-center",
+	},
+	{
+		type: "project",
+		name: "Sprint Calculator",
+		url: "https://cf-sprint-calc.netlify.app",
+		span: "col-span-1",
+		image: calc,
+		imagePos: "object-center",
+	},
 ];
 
 export default function Portfolio() {
@@ -31,7 +73,11 @@ export default function Portfolio() {
 			<motion.div className="bg-white px-10 py-10 max-w-2xl" style={{ x, opacity }}>
 				<div className="flex items-center justify-between mb-8">
 					<p className="text-xs tracking-widest uppercase text-gray-500">Work</p>
-					<a href="/KConnolly.pdf" download className="flex flex-col items-center gap-1 opacity-60 hover:opacity-100 transition-opacity">
+					<a
+						href="/KConnolly.pdf"
+						download
+						className="flex flex-col items-center gap-1 opacity-60 hover:opacity-100 transition-opacity"
+					>
 						<span className="text-[10px] tracking-wide text-gray-500">download</span>
 						<img src={resume.src} alt="resume" className="w-8 my-1" />
 						<span className="text-[10px] tracking-wide text-gray-500">resume</span>
@@ -39,10 +85,41 @@ export default function Portfolio() {
 				</div>
 				<p className="text-gray-700 leading-relaxed mb-10 max-w-xl">
 					{"I've been a builder and leader at: "}
-					<a href="http://metalab.com" target="_blank" rel="noreferrer" className="underline hover:text-gray-500">Metalab</a>,{" "}
-					<a href="http://neofinancial.com" target="_blank" rel="noreferrer" className="underline hover:text-gray-500">Neo Financial</a>,{" "}
-					<a href="http://lighthouselabs.ca" target="_blank" rel="noreferrer" className="underline hover:text-gray-500">Lighthouse Labs</a>,{" "}
-					<a href="http://checkfront.com" target="_blank" rel="noreferrer" className="underline hover:text-gray-500">Checkfront</a>
+					<a
+						href="http://metalab.com"
+						target="_blank"
+						rel="noreferrer"
+						className="underline hover:text-gray-500"
+					>
+						Metalab
+					</a>
+					,{" "}
+					<a
+						href="http://neofinancial.com"
+						target="_blank"
+						rel="noreferrer"
+						className="underline hover:text-gray-500"
+					>
+						Neo Financial
+					</a>
+					,{" "}
+					<a
+						href="http://lighthouselabs.ca"
+						target="_blank"
+						rel="noreferrer"
+						className="underline hover:text-gray-500"
+					>
+						Lighthouse Labs
+					</a>
+					,{" "}
+					<a
+						href="http://checkfront.com"
+						target="_blank"
+						rel="noreferrer"
+						className="underline hover:text-gray-500"
+					>
+						Checkfront
+					</a>
 					{", + more."}
 				</p>
 				<p>Some fun widgets:</p>

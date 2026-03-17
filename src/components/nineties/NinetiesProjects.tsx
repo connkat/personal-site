@@ -17,16 +17,32 @@ export default function NinetiesProjects() {
 		<div id="projects" className="px-[5vh] text-base">
 			<p>
 				I could go on about my professional experience with{" "}
-				<a href="http://metalab.com" target="_blank" rel="noreferrer">Metalab</a>,{" "}
-				<a href="http://neofinancial.com" target="_blank" rel="noreferrer">Neo Financial</a>,{" "}
-				<a href="http://lighthouselabs.ca" target="_blank" rel="noreferrer">Lighthouse Labs</a>,{" "}
-				<a href="http://checkfront.com" target="_blank" rel="noreferrer">Checkfront</a>
+				<a href="http://metalab.com" target="_blank" rel="noreferrer">
+					Metalab
+				</a>
+				,{" "}
+				<a href="http://neofinancial.com" target="_blank" rel="noreferrer">
+					Neo Financial
+				</a>
+				,{" "}
+				<a href="http://lighthouselabs.ca" target="_blank" rel="noreferrer">
+					Lighthouse Labs
+				</a>
+				,{" "}
+				<a href="http://checkfront.com" target="_blank" rel="noreferrer">
+					Checkfront
+				</a>
 				, or my Freelance work, but that is what a{" "}
-				<a href="/KConnolly.pdf" download>resume</a> is for.
+				<a href="/KConnolly.pdf" download>
+					resume
+				</a>{" "}
+				is for.
 			</p>
 			<p>Instead here are some of my fun personal projects:</p>
-			<div className="flex md:grid overflow-x-auto md:overflow-x-visible snap-x snap-mandatory md:snap-none gap-4 mt-3"
-				style={{ gridTemplateColumns: "repeat(auto-fill, minmax(180px, 1fr))" }}>
+			<div
+				className="flex md:grid overflow-x-auto md:overflow-x-visible snap-x snap-mandatory md:snap-none gap-4 mt-3"
+				style={{ gridTemplateColumns: "repeat(auto-fill, minmax(180px, 1fr))" }}
+			>
 				{projects.map(({ name, url, image }) => (
 					<div key={name} className="window snap-start shrink-0 md:shrink w-[70vw] md:w-full">
 						<div className="title-bar">
@@ -39,7 +55,11 @@ export default function NinetiesProjects() {
 						</div>
 						<div className="window-body" style={{ padding: "4px" }}>
 							<a href={url} target="_blank" rel="noreferrer">
-								<img src={image.src} alt={name} style={{ width: "100%", height: "250px", objectFit: "cover", display: "block" }} />
+								<img
+									src={image.src}
+									alt={name}
+									style={{ width: "100%", height: "250px", objectFit: "cover", display: "block" }}
+								/>
 							</a>
 						</div>
 					</div>

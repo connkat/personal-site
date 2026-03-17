@@ -17,7 +17,6 @@ const navLinks = [
 	{ href: "https://github.com/connkat", label: "GitHub", external: true },
 	{ href: "https://linkedin.com/in/connkat", label: "LinkedIn", external: true },
 	{ href: "https://medium.com/@connkat", label: "Medium", external: true },
-
 ];
 
 export default function Nav({ isNineties, handle90sToggle }: NavProps) {
@@ -55,10 +54,11 @@ export default function Nav({ isNineties, handle90sToggle }: NavProps) {
 						aria-label="Toggle menu"
 						style={{ border: "none", background: "none", padding: 0, boxShadow: "none" }}
 					>
-						{menuOpen
-						? <CloseIcon style={{ fontSize: 24, color: "#4b5563" }} />
-						: <MenuIcon style={{ fontSize: 24, color: "#4b5563" }} />
-					}
+						{menuOpen ? (
+							<CloseIcon style={{ fontSize: 24, color: "#4b5563" }} />
+						) : (
+							<MenuIcon style={{ fontSize: 24, color: "#4b5563" }} />
+						)}
 					</button>
 				</div>
 			</nav>

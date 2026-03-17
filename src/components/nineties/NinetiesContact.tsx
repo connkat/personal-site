@@ -48,14 +48,20 @@ export default function NinetiesContact() {
 				<div className="flex flex-col mr-[5vh]">
 					<div>
 						<h4>Name</h4>
-						<input type="text" name="user_name" value={entryFields.name}
+						<input
+							type="text"
+							name="user_name"
+							value={entryFields.name}
 							className={inputClass + " max-sm:w-full"}
 							onChange={(e) => setEntryFields({ ...entryFields, name: e.target.value })}
 						/>
 					</div>
 					<div>
 						<h4>Email</h4>
-						<input type="email" name="user_email" value={entryFields.email}
+						<input
+							type="email"
+							name="user_email"
+							value={entryFields.email}
 							className={inputClass + " max-sm:w-full"}
 							onChange={(e) => setEntryFields({ ...entryFields, email: e.target.value })}
 						/>
@@ -63,12 +69,19 @@ export default function NinetiesContact() {
 				</div>
 				<div>
 					<h4>Message</h4>
-					<textarea name="message" value={entryFields.message}
+					<textarea
+						name="message"
+						value={entryFields.message}
 						className={textareaClass + " max-sm:w-full"}
 						onChange={(e) => setEntryFields({ ...entryFields, message: e.target.value })}
 					/>
-					<input type="submit" value="Send" className="text-yellow-300 cursor-pointer"
-						disabled={isSubmitting || !entryFields.name || !entryFields.email || !entryFields.message}
+					<input
+						type="submit"
+						value="Send"
+						className="text-yellow-300 cursor-pointer"
+						disabled={
+							isSubmitting || !entryFields.name || !entryFields.email || !entryFields.message
+						}
 					/>
 					{stateMessage && <p>{stateMessage}</p>}
 				</div>
