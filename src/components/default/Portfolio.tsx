@@ -2,7 +2,7 @@
 
 import { useRef } from "react";
 import { motion, useScroll, useTransform } from "framer-motion";
-import { resume, coffee, dub, pixels, fwf, calc, nate } from "../../assets/index";
+import { resume, coffee, dub, pixels, fwf, calc, nate, ycpr } from "../../assets/index";
 
 const cells = [
 	{
@@ -17,11 +17,11 @@ const cells = [
 	{ type: "empty", span: "col-span-1" },
 	{
 		type: "project",
-		name: "The Yellow Dubmarine",
-		url: "http://theyellowdubmarine.com",
+		name: "YCPR",
+		url: "https://ycpr-alt.netlify.app/",
 		span: "col-span-2",
-		image: dub,
-		imagePos: "object-[center_8%]",
+		image: ycpr,
+		imagePos: "object-center",
 	},
 	{
 		type: "project",
@@ -55,6 +55,15 @@ const cells = [
 		span: "col-span-1",
 		image: calc,
 		imagePos: "object-center",
+	},
+	{ type: "empty", span: "col-span-1" },
+	{
+		type: "project",
+		name: "The Yellow Dubmarine",
+		url: "http://theyellowdubmarine.com",
+		span: "col-span-2",
+		image: dub,
+		imagePos: "object-[center_8%]",
 	},
 ];
 

@@ -1,15 +1,16 @@
 "use client";
 
 import "98.css";
-import { coffee, dub, pixels, fwf, calc, nate2 } from "../../assets/index";
+import { coffee, dub, pixels, fwf, calc, nate2, ycpr } from "../../assets/index";
 
 const projects = [
 	{ name: "Coffee Fix", url: "http://coffee-fix.net", image: coffee },
-	{ name: "Yellow Dubmarine", url: "http://theyellowdubmarine.com", image: dub },
+	{ name: "YCPR", url: "https://ycpr-alt.netlify.app/", image: ycpr },
 	{ name: "Pixels & Pints", url: "https://pixels-og.netlify.app/", image: pixels },
 	{ name: "FWF", url: "http://freezerburnwrestlingfederation.com", image: fwf },
 	{ name: "Sprint Calculator", url: "https://cf-sprint-calc.netlify.app", image: calc },
 	{ name: "Nathan Iles", url: "https://nathaniles.com/", image: nate2 },
+	{ name: "Yellow Dubmarine", url: "http://theyellowdubmarine.com", image: dub },
 ];
 
 export default function NinetiesProjects() {
@@ -39,12 +40,9 @@ export default function NinetiesProjects() {
 				is for.
 			</p>
 			<p>Instead here are some of my fun personal projects:</p>
-			<div
-				className="flex md:grid overflow-x-auto md:overflow-x-visible snap-x snap-mandatory md:snap-none gap-4 mt-3"
-				style={{ gridTemplateColumns: "repeat(auto-fill, minmax(180px, 1fr))" }}
-			>
+			<div className="flex overflow-x-auto snap-x snap-mandatory gap-4 mt-3">
 				{projects.map(({ name, url, image }) => (
-					<div key={name} className="window snap-start shrink-0 md:shrink w-[70vw] md:w-full">
+					<div key={name} className="window snap-start shrink-0 w-[70vw] md:w-55">
 						<div className="title-bar">
 							<div className="title-bar-text">{name}</div>
 							<div className="title-bar-controls">
