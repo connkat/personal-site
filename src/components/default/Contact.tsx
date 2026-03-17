@@ -3,8 +3,8 @@
 import { FormEvent, useState } from "react";
 import emailjs from "@emailjs/browser";
 
-const inputClass = "mb-3 w-full h-10 border-b border-gray-400 bg-transparent focus:outline-none focus:border-gray-800 text-gray-800 transition-colors";
-const textareaClass = "mb-3 h-32 w-full border-b border-gray-400 bg-transparent focus:outline-none focus:border-gray-800 text-gray-800 transition-colors resize-none";
+const inputClass = "mb-3 w-full h-10 border-b border-gray-400 bg-transparent focus:outline-none focus:border-gray-800 text-gray-800 transition-colors font-[inherit]";
+const textareaClass = "mb-3 h-32 w-full border-b border-gray-400 bg-transparent focus:outline-none focus:border-gray-800 text-gray-800 transition-colors resize-none font-[inherit]";
 
 export default function Contact() {
 	const [isSubmitting, setIsSubmitting] = useState(false);
@@ -51,7 +51,7 @@ export default function Contact() {
 				I can&apos;t come to the phone right now, but leave a name and message and I&apos;ll get back to you.
 			</p>
 			<form id="form" onSubmit={sendEmail} className="max-w-md flex flex-col">
-				<label className="text-xs tracking-widest uppercase text-gray-500 mb-1">Name</label>
+				<label className="text-sm text-gray-500 mb-1 font-crimson-pro">Name</label>
 				<input
 					type="text"
 					name="user_name"
@@ -59,7 +59,7 @@ export default function Contact() {
 					className={inputClass}
 					onChange={(e) => setEntryFields({ ...entryFields, name: e.target.value })}
 				/>
-				<label className="text-xs tracking-widest uppercase text-gray-500 mb-1 mt-4">Email</label>
+				<label className="text-sm text-gray-500 mb-1 font-crimson-pro mt-4">Email</label>
 				<input
 					type="email"
 					name="user_email"
@@ -67,7 +67,7 @@ export default function Contact() {
 					className={inputClass}
 					onChange={(e) => setEntryFields({ ...entryFields, email: e.target.value })}
 				/>
-				<label className="text-xs tracking-widest uppercase text-gray-500 mb-1 mt-4">Message</label>
+				<label className="text-sm text-gray-500 mb-1 font-crimson-pro mt-4">Message</label>
 				<textarea
 					name="message"
 					value={entryFields.message}
