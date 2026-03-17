@@ -78,8 +78,8 @@ export default function Portfolio() {
 	const opacity = useTransform(scrollYProgress, [0, 0.4], [0, 1]);
 
 	return (
-		<div id="work" ref={ref} className="px-[10vw] py-24 overflow-x-clip">
-			<motion.div className="bg-white px-10 py-10 max-w-2xl rounded-lg" style={{ x, opacity }}>
+		<div id="work" ref={ref} className="px-[10vw] py-24">
+			<motion.div className="bg-white px-10 pt-4 pb-10 max-w-2xl rounded-lg" style={{ x, opacity, boxShadow: "0 24px 80px rgba(0,0,0,0.75)" }}>
 				<div className="flex items-center justify-between mb-8">
 					<p className="text-xs tracking-widest uppercase text-gray-500">Work</p>
 					<a
