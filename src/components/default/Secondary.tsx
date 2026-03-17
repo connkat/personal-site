@@ -1,27 +1,21 @@
 "use client";
 
-import { motion, useAnimation, useInView } from "framer-motion";
-import { useRef, useEffect } from "react";
+import { motion, useScroll, useTransform } from "framer-motion";
+import { useRef } from "react";
 
 export default function Secondary() {
 	const ref = useRef(null);
-	const isInView = useInView(ref, { once: true, amount: 0.3 });
-	const controls = useAnimation();
+	const { scrollYProgress } = useScroll({
+		target: ref,
+		offset: ["start end", "center center"],
+	});
 
-	useEffect(() => {
-		if (isInView) {
-			controls.start({ x: 0, opacity: 1 });
-		}
-	}, [isInView, controls]);
+	const x = useTransform(scrollYProgress, [0, 1], ["120vw", "0vw"]);
+	const opacity = useTransform(scrollYProgress, [0, 0.4], [0, 1]);
 
 	return (
-		<div id="about" ref={ref} className="min-h-screen flex items-center overflow-x-clip px-[10vw] py-24">
-			<motion.div
-				className="max-w-2xl bg-white px-10 py-10"
-				initial={{ x: "100vw", opacity: 0 }}
-				animate={controls}
-				transition={{ type: "spring", stiffness: 60, damping: 20 }}
-			>
+		<div id="about" ref={ref} className="flex items-center overflow-x-clip px-[10vw] py-32">
+			<motion.div className="max-w-2xl bg-white px-10 py-10 ml-auto mr-[10vw]" style={{ x, opacity }}>
 				<p className="text-xs tracking-widest uppercase text-gray-500 mb-6">About</p>
 				<h2 className="text-[clamp(1.5rem,3vw,2.5rem)] font-thin leading-snug text-gray-800 mb-6">
 					Concatenation: link together in a chain or series.

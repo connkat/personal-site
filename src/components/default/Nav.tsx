@@ -28,7 +28,7 @@ export default function Nav({ isNineties, handle90sToggle }: NavProps) {
 							: "border-gray-400 text-gray-500 hover:border-gray-700 hover:text-gray-700"
 					}`}
 				>
-					98
+					1998
 				</button>
 			</div>
 		</nav>

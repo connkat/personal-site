@@ -1,15 +1,25 @@
 "use client";
 
-import "animate.css";
+import { motion, useScroll, useTransform } from "framer-motion";
+import { useRef } from "react";
 
 export default function Welcome() {
+	const ref = useRef(null);
+	const { scrollYProgress } = useScroll({
+		target: ref,
+		offset: ["start start", "end start"],
+	});
+
+	const y = useTransform(scrollYProgress, [0, 1], ["30vh", "0vh"]);
+	const opacity = useTransform(scrollYProgress, [0, 0.5], [1, 0]);
+
 	return (
-		<div className="h-screen">
-			<div className="absolute top-[20%] w-full">
-				<h1 className="animate__animated animate__fadeInUp text-right pr-[5%] leading-none font-thin text-[clamp(2rem,6vw,5rem)] tracking-tight text-gray-700 drop-shadow-lg">
+		<div ref={ref} className="h-[70vh] overflow-hidden">
+			<motion.div className="absolute top-[20%] w-full" style={{ y, opacity }}>
+				<h1 className="text-right pr-[5%] leading-none font-thin text-[clamp(2rem,6vw,5rem)] tracking-tight text-gray-700 drop-shadow-lg">
 					Fullstack Development, handled.
 				</h1>
-			</div>
+			</motion.div>
 		</div>
 	);
 }
