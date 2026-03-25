@@ -9,7 +9,7 @@ export default function Default({ isNineties, handle90sToggle }: DefaultProps) {
 	return (
 		<>
 			<div className="fixed inset-0 -z-10 bg-[url('/inversion.jpg')] bg-cover bg-center" />
-			<div className="min-h-screen font-crimson-pro">
+			<div className="min-h-screen" style={{ fontFamily: "Switzer, sans-serif", fontWeight: 200 }}>
 				<Nav isNineties={isNineties} handle90sToggle={handle90sToggle} />
 				<Welcome />
 				<Secondary />
